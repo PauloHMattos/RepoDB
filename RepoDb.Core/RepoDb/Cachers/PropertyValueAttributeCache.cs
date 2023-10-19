@@ -30,8 +30,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="expression">The property expression.</param>
         /// <returns>The list of <see cref="PropertyValueAttribute"/> object.</returns>
-        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Get(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -40,8 +39,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The list of <see cref="PropertyValueAttribute"/> object.</returns>
-        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(string propertyName) =>
             Get(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -50,8 +48,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The list of <see cref="PropertyValueAttribute"/> object.</returns>
-        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Field field)
-            where TEntity : class =>
+        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Field field) =>
             Get(TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>

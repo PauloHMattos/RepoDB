@@ -69,6 +69,48 @@ namespace RepoDb.IntegrationTests.Types.Numbers
         }
 
         [TestMethod]
+        public void TestSqlConnectionNumbersStructCrud()
+        {
+            // Setup
+            var entity = new NumbersStruct
+            {
+                SessionId = Guid.NewGuid(),
+                ColumnBigInt = 12345,
+                ColumnBit = true,
+                ColumnDecimal = 12345,
+                ColumnFloat = (float)12345.12,
+                ColumnInt = 12345,
+                ColumnMoney = (decimal)12345.12,
+                ColumnNumeric = 12345,
+                ColumnReal = (float)12345.12,
+                ColumnSmallInt = 12345,
+                ColumnSmallMoney = 12345
+            };
+
+            using (var connection = new SqlConnection(Database.ConnectionStringForRepoDb))
+            {
+                // Act Insert
+                var id = connection.Insert(entity);
+
+                // Act Query
+                var data = connection.Query<NumbersStruct>(e => e.SessionId == (Guid)id).FirstOrDefault();
+
+                // Assert
+                Assert.IsNotNull(data);
+                Assert.AreEqual(entity.ColumnBigInt, data.ColumnBigInt);
+                Assert.AreEqual(entity.ColumnBit, data.ColumnBit);
+                Assert.AreEqual(entity.ColumnDecimal, data.ColumnDecimal);
+                Assert.AreEqual(entity.ColumnFloat, data.ColumnFloat);
+                Assert.AreEqual(entity.ColumnInt, data.ColumnInt);
+                Assert.AreEqual(entity.ColumnMoney, data.ColumnMoney);
+                Assert.AreEqual(entity.ColumnNumeric, data.ColumnNumeric);
+                Assert.AreEqual(entity.ColumnReal, data.ColumnReal);
+                Assert.AreEqual(entity.ColumnSmallInt, data.ColumnSmallInt);
+                Assert.AreEqual(entity.ColumnSmallMoney, data.ColumnSmallMoney);
+            }
+        }
+
+        [TestMethod]
         public void TestSqlConnectionNumbersNullCrud()
         {
             // Setup

@@ -38,7 +38,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return CountInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -71,7 +70,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return CountInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -104,7 +102,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return CountInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -137,7 +134,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return CountInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -170,7 +166,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return CountInternal<TEntity>(connection: connection,
                 where: where,
@@ -203,7 +198,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new CountRequest(typeof(TEntity),
@@ -257,7 +251,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return CountAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -293,7 +286,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return CountAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -329,7 +321,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return CountAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -365,7 +356,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return CountAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -401,7 +391,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return CountAsyncInternal<TEntity>(connection: connection,
                 where: where,
@@ -437,7 +426,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new CountRequest(typeof(TEntity),

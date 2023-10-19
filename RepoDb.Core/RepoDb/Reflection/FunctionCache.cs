@@ -5,7 +5,6 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Dynamic;
 using System.Linq;
 
 namespace RepoDb
@@ -160,13 +159,13 @@ namespace RepoDb
         /// <param name="dbSetting"></param>
         /// <param name="dbHelper"></param>
         /// <returns></returns>
-        internal static Action<DbCommand, object> GetDataEntityDbParameterSetterCompiledFunction(Type entityType,
+        internal static Action<DbCommand, T> GetDataEntityDbParameterSetterCompiledFunction<T>(Type entityType,
             string cacheKey,
             IEnumerable<DbField> inputFields,
             IEnumerable<DbField> outputFields,
             IDbSetting dbSetting = null,
             IDbHelper dbHelper = null) =>
-            DataEntityDbParameterSetterCache.Get(entityType,
+            DataEntityDbParameterSetterCache<T>.Get(entityType,
                 cacheKey,
                 inputFields,
                 outputFields,
@@ -178,9 +177,9 @@ namespace RepoDb
         /// <summary>
         /// 
         /// </summary>
-        private static class DataEntityDbParameterSetterCache
+        private static class DataEntityDbParameterSetterCache<T>
         {
-            private static ConcurrentDictionary<long, Action<DbCommand, object>> cache = new();
+            private static ConcurrentDictionary<long, Action<DbCommand, T>> cache = new();
 
             /// <summary>
             /// 
@@ -192,7 +191,7 @@ namespace RepoDb
             /// <param name="dbSetting"></param>
             /// <param name="dbHelper"></param>
             /// <returns></returns>
-            internal static Action<DbCommand, object> Get(Type entityType,
+            internal static Action<DbCommand, T> Get(Type entityType,
                 string cacheKey,
                 IEnumerable<DbField> inputFields,
                 IEnumerable<DbField> outputFields,
@@ -204,11 +203,11 @@ namespace RepoDb
                 {
                     if (TypeCache.Get(entityType).IsDictionaryStringObject())
                     {
-                        func = FunctionFactory.CompileDictionaryStringObjectDbParameterSetter(entityType, inputFields, dbSetting, dbHelper);
+                        func = FunctionFactory.CompileDictionaryStringObjectDbParameterSetter<T>(entityType, inputFields, dbSetting, dbHelper);
                     }
                     else
                     {
-                        func = FunctionFactory.CompileDataEntityDbParameterSetter(entityType, inputFields, outputFields, dbSetting, dbHelper);
+                        func = FunctionFactory.CompileDataEntityDbParameterSetter<T>(entityType, inputFields, outputFields, dbSetting, dbHelper);
                     }
                 }
                 return func;
@@ -227,7 +226,7 @@ namespace RepoDb
                 IEnumerable<DbField> inputFields,
                 IEnumerable<DbField> outputFields)
             {
-                var key = HashCode.Combine((long)entityType.GetHashCode(), cacheKey.GetHashCode());
+                var key = HashCode.Combine(entityType.GetHashCode(), cacheKey.GetHashCode());
                 if (inputFields != null)
                 {
                     foreach (var field in inputFields)
@@ -263,23 +262,23 @@ namespace RepoDb
         /// <param name="dbSetting"></param>
         /// <param name="dbHelper"></param>
         /// <returns></returns>
-        internal static Action<DbCommand, IList<object>> GetDataEntityListDbParameterSetterCompiledFunction(Type entityType,
+        internal static Action<DbCommand, IList<T>> GetDataEntityListDbParameterSetterCompiledFunction<T>(Type entityType,
             string cacheKey,
             IEnumerable<DbField> inputFields,
             IEnumerable<DbField> outputFields,
             int batchSize,
             IDbSetting dbSetting = null,
             IDbHelper dbHelper = null) =>
-            DataEntityListDbParameterSetterCache.Get(entityType, cacheKey, inputFields, outputFields, batchSize, dbSetting, dbHelper);
+            DataEntityListDbParameterSetterCache<T>.Get(entityType, cacheKey, inputFields, outputFields, batchSize, dbSetting, dbHelper);
 
         #region DataEntityListDbParameterSetterCache
 
         /// <summary>
         /// 
         /// </summary>
-        private static class DataEntityListDbParameterSetterCache
+        private static class DataEntityListDbParameterSetterCache<T>
         {
-            private static ConcurrentDictionary<long, Action<DbCommand, IList<object>>> cache = new();
+            private static ConcurrentDictionary<long, Action<DbCommand, IList<T>>> cache = new();
 
             /// <summary>
             /// 
@@ -292,7 +291,7 @@ namespace RepoDb
             /// <param name="dbSetting"></param>
             /// <param name="dbHelper"></param>
             /// <returns></returns>
-            internal static Action<DbCommand, IList<object>> Get(Type entityType,
+            internal static Action<DbCommand, IList<T>> Get(Type entityType,
                 string cacheKey,
                 IEnumerable<DbField> inputFields,
                 IEnumerable<DbField> outputFields,
@@ -305,7 +304,7 @@ namespace RepoDb
                 {
                     if (TypeCache.Get(entityType).IsDictionaryStringObject())
                     {
-                        func = FunctionFactory.CompileDictionaryStringObjectListDbParameterSetter(entityType,
+                        func = FunctionFactory.CompileDictionaryStringObjectListDbParameterSetter<T>(entityType,
                             inputFields,
                             batchSize,
                             dbSetting,
@@ -313,7 +312,7 @@ namespace RepoDb
                     }
                     else
                     {
-                        func = FunctionFactory.CompileDataEntityListDbParameterSetter(entityType,
+                        func = FunctionFactory.CompileDataEntityListDbParameterSetter<T>(entityType,
                             inputFields,
                             outputFields,
                             batchSize,
@@ -334,7 +333,7 @@ namespace RepoDb
             /// <param name="outputFields"></param>
             /// <param name="batchSize"></param>
             /// <returns></returns>
-            private static long GetKey(Type entityType,
+            private static long GetKey(Type entityType, 
                 string cacheKey,
                 IEnumerable<DbField> inputFields,
                 IEnumerable<DbField> outputFields,
@@ -378,8 +377,7 @@ namespace RepoDb
         internal static Action<TEntity, DbCommand> GetDbCommandToPropertyCompiledFunction<TEntity>(Field field,
             string parameterName,
             int index,
-            IDbSetting dbSetting = null)
-            where TEntity : class =>
+            IDbSetting dbSetting = null) =>
             DbCommandToPropertyCache<TEntity>.Get(field, parameterName, index, dbSetting);
 
         #region DbCommandToPropertyCache
@@ -389,7 +387,6 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity"></typeparam>
         private static class DbCommandToPropertyCache<TEntity>
-            where TEntity : class
         {
             private static ConcurrentDictionary<long, Action<TEntity, DbCommand>> cache = new();
 
@@ -425,21 +422,23 @@ namespace RepoDb
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="entityType"></param>
         /// <param name="field"></param>
         /// <returns></returns>
-        internal static Action<object, object> GetDataEntityPropertySetterCompiledFunction(Type entityType,
+        internal static Action<TEntity, object> GetDataEntityPropertySetterCompiledFunction<TEntity>(Type entityType,
             Field field) =>
-            DataEntityPropertySetterCache.Get(entityType, field);
+            DataEntityPropertySetterCache<TEntity>.Get(entityType, field);
 
         #region DataEntityPropertySetterCache
 
         /// <summary>
         /// 
         /// </summary>
-        private static class DataEntityPropertySetterCache
+        /// <typeparam name="TEntity"></typeparam>
+        private static class DataEntityPropertySetterCache<TEntity>
         {
-            private static ConcurrentDictionary<long, Action<object, object>> cache = new();
+            private static ConcurrentDictionary<long, Action<TEntity, object>> cache = new();
 
             /// <summary>
             /// 
@@ -447,7 +446,7 @@ namespace RepoDb
             /// <param name="type"></param>
             /// <param name="field"></param>
             /// <returns></returns>
-            internal static Action<object, object> Get(Type type,
+            internal static Action<TEntity, object> Get(Type type,
                 Field field)
             {
                 var key = HashCode.Combine(type.GetHashCode(), field.GetHashCode());
@@ -455,11 +454,11 @@ namespace RepoDb
                 {
                     if (TypeCache.Get(type).IsDictionaryStringObject())
                     {
-                        func = FunctionFactory.CompileDictionaryStringObjectItemSetter(type, field);
+                        func = FunctionFactory.CompileDictionaryStringObjectItemSetter<TEntity>(type, field);
                     }
                     else
                     {
-                        func = FunctionFactory.CompileDataEntityPropertySetter(type, field);
+                        func = FunctionFactory.CompileDataEntityPropertySetter<TEntity>(type, field);
                     }
                     cache.TryAdd(key, func);
                 }

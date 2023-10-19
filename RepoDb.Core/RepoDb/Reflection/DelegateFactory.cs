@@ -24,7 +24,6 @@ namespace RepoDb.Reflection
         /// <param name="reader">The <see cref="DbDataReader"/> to be converted.</param>
         /// <returns>An instance of data entity object.</returns>
         public static DataReaderToDataEntityDelegate<TEntity> GetDataReaderToDataEntityDelegate<TEntity>(DbDataReader reader)
-            where TEntity : class
         {
             var entityType = typeof(TEntity);
             var dynamicMethod = new DynamicMethod(StringConstant.DynamicMethod,
@@ -81,7 +80,6 @@ namespace RepoDb.Reflection
         }
 
         private static void EmitDataReaderToDataEntityMapping<TEntity>(ILGenerator ilGenerator, int ordinal, ClassProperty property, FieldDefinition fieldDefinition)
-            where TEntity : class
         {
             // Get the property type
             var isNullable = fieldDefinition == null || fieldDefinition?.IsNullable == true;

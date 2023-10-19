@@ -32,7 +32,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return CountAllInternal<TEntity>(connection: connection,
                 hints: hints,
@@ -62,7 +61,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new CountAllRequest(typeof(TEntity),
@@ -107,7 +105,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return CountAllAsyncInternal<TEntity>(connection: connection,
                 hints: hints,
@@ -140,7 +137,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new CountAllRequest(typeof(TEntity),

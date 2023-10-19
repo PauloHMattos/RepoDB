@@ -49,8 +49,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -119,8 +117,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -189,8 +185,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -259,8 +253,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -329,8 +321,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -416,9 +406,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -506,9 +493,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -596,9 +580,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -686,9 +667,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -776,9 +754,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -884,10 +859,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -995,10 +966,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1106,10 +1073,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1217,10 +1180,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1328,10 +1287,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1456,11 +1411,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1587,11 +1537,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1718,11 +1663,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1849,11 +1789,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1980,11 +1915,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -2128,12 +2058,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -2279,12 +2203,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -2430,12 +2348,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -2581,12 +2493,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -2732,12 +2638,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -2900,13 +2800,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3071,13 +2964,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3242,13 +3128,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3413,13 +3292,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3584,13 +3456,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3699,8 +3564,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3772,8 +3635,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3845,8 +3706,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3918,8 +3777,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -3991,8 +3848,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4081,9 +3936,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4174,9 +4026,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4267,9 +4116,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4360,9 +4206,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4453,9 +4296,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4564,10 +4404,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4678,10 +4514,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4792,10 +4624,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -4906,10 +4734,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5020,10 +4844,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5151,11 +4971,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5285,11 +5100,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5419,11 +5229,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5553,11 +5358,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5687,11 +5487,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5838,12 +5633,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -5992,12 +5781,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -6146,12 +5929,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -6300,12 +6077,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -6454,12 +6225,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -6625,13 +6390,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -6799,13 +6557,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -6973,13 +6724,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7147,13 +6891,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7321,13 +7058,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7441,8 +7171,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7517,8 +7245,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7593,8 +7319,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7669,8 +7393,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7745,8 +7467,6 @@ namespace RepoDb
             string cacheKey2 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7840,9 +7560,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -7939,9 +7656,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8038,9 +7752,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8137,9 +7848,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8236,9 +7944,6 @@ namespace RepoDb
             string cacheKey3 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8355,10 +8060,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8478,10 +8179,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8601,10 +8298,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8724,10 +8417,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8847,10 +8536,6 @@ namespace RepoDb
             string cacheKey4 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -8989,11 +8674,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -9135,11 +8815,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -9281,11 +8956,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -9427,11 +9097,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -9573,11 +9238,6 @@ namespace RepoDb
             string cacheKey5 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -9738,12 +9398,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -9907,12 +9561,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -10076,12 +9724,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -10245,12 +9887,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -10414,12 +10050,6 @@ namespace RepoDb
             string cacheKey6 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -10602,13 +10232,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -10794,13 +10417,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -10986,13 +10602,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -11178,13 +10787,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -11370,13 +10972,6 @@ namespace RepoDb
             string cacheKey7 = null,
             string traceKey = null,
 			IDbTransaction transaction = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -14532,8 +14127,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -14611,8 +14204,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -14690,8 +14281,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -14769,8 +14358,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -14848,8 +14435,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -14946,9 +14531,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15048,9 +14630,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15150,9 +14729,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15252,9 +14828,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15354,9 +14927,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15476,10 +15046,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15602,10 +15168,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15728,10 +15290,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15854,10 +15412,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -15980,10 +15534,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -16125,11 +15675,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -16274,11 +15819,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -16423,11 +15963,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -16572,11 +16107,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -16721,11 +16251,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -16889,12 +16414,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -17061,12 +16580,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -17233,12 +16746,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -17405,12 +16912,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -17577,12 +17078,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -17768,13 +17263,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -17963,13 +17451,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -18158,13 +17639,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -18353,13 +17827,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -18548,13 +18015,6 @@ namespace RepoDb
             string traceKey = null,
 			IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());

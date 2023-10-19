@@ -41,7 +41,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return InsertInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -81,7 +80,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return InsertInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -118,7 +116,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return InsertInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -156,7 +153,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return InsertInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -196,7 +192,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             if (TypeCache.Get(GetEntityType(entity)).IsDictionaryStringObject() == true)
             {
@@ -257,7 +252,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return InsertAsyncInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -300,7 +294,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return InsertAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -340,7 +333,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return InsertAsyncInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -381,7 +373,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return InsertAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -424,7 +415,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             if (TypeCache.Get(GetEntityType(entity)).IsDictionaryStringObject() == true)
             {
@@ -651,14 +641,13 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
 
             // Get the context
             var entityType = entity?.GetType() ?? typeof(TEntity);
-            var context = InsertExecutionContextProvider.Create(entityType,
+            var context = InsertExecutionContextProvider.Create<TEntity>(entityType,
                 connection,
                 tableName,
                 fields,
@@ -734,14 +723,13 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
 
             // Get the context
             var entityType = entity?.GetType() ?? typeof(TEntity);
-            var context = await InsertExecutionContextProvider.CreateAsync(entityType,
+            var context = await InsertExecutionContextProvider.CreateAsync<TEntity>(entityType,
                 connection,
                 tableName,
                 fields,

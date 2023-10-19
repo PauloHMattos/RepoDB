@@ -30,7 +30,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return TruncateInternal<TEntity>(connection: connection,
                 commandTimeout: commandTimeout,
@@ -57,7 +56,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new TruncateRequest(typeof(TEntity),
@@ -97,7 +95,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return TruncateAsyncInternal<TEntity>(connection: connection,
                 commandTimeout: commandTimeout,
@@ -127,7 +124,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new TruncateRequest(typeof(TEntity),

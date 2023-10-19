@@ -32,8 +32,7 @@ namespace RepoDb
         /// <param name="expression">The expression to be parsed.</param>
         /// <param name="columnName">The name of the database column.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
-            string columnName)
-            where TEntity : class =>
+            string columnName) =>
             Add<TEntity>(expression, columnName, false);
 
         /// <summary>
@@ -45,8 +44,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             string columnName,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression), columnName, force);
 
         /// <summary>
@@ -56,8 +54,7 @@ namespace RepoDb
         /// <param name="propertyName">The name of the class property to be mapped.</param>
         /// <param name="columnName">The name of the database column.</param>
         public static void Add<TEntity>(string propertyName,
-            string columnName)
-            where TEntity : class =>
+            string columnName) =>
             Add<TEntity>(propertyName, columnName, false);
 
         /// <summary>
@@ -70,7 +67,6 @@ namespace RepoDb
         public static void Add<TEntity>(string propertyName,
             string columnName,
             bool force)
-            where TEntity : class
         {
             // Validates
             ThrowNullReferenceException(propertyName, "PropertyName");
@@ -93,8 +89,7 @@ namespace RepoDb
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
         /// <param name="columnName">The name of the database column.</param>
         public static void Add<TEntity>(Field field,
-            string columnName)
-            where TEntity : class =>
+            string columnName) =>
             Add<TEntity>(field, columnName, false);
 
         /// <summary>
@@ -107,7 +102,6 @@ namespace RepoDb
         public static void Add<TEntity>(Field field,
             string columnName,
             bool force)
-            where TEntity : class
         {
             // Validates
             ThrowNullReferenceException(field, "Field");
@@ -130,8 +124,7 @@ namespace RepoDb
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/> to be mapped.</param>
         /// <param name="columnName">The name of the database column.</param>
         internal static void Add<TEntity>(PropertyInfo propertyInfo,
-            string columnName)
-            where TEntity : class =>
+            string columnName) =>
             Add<TEntity>(propertyInfo, columnName, false);
 
         /// <summary>
@@ -144,7 +137,6 @@ namespace RepoDb
         internal static void Add<TEntity>(PropertyInfo propertyInfo,
             string columnName,
             bool force)
-            where TEntity : class
         {
             // Validate
             ThrowNullReferenceException(propertyInfo, "PropertyInfo");
@@ -184,8 +176,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>The mapped name of the property.</returns>
-        public static string Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static string Get<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Get<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -194,8 +185,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The mapped name of the property.</returns>
-        public static string Get<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static string Get<TEntity>(string propertyName) =>
             Get<TEntity>(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -204,8 +194,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The mapped name of the property.</returns>
-        public static string Get<TEntity>(Field field)
-            where TEntity : class =>
+        public static string Get<TEntity>(Field field) =>
             Get<TEntity>(TypeExtension.GetProperty<TEntity>(field.Name));
 
 
@@ -215,8 +204,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/>.</param>
         /// <returns>The mapped name of the property.</returns>
-        internal static string Get<TEntity>(PropertyInfo propertyInfo)
-            where TEntity : class =>
+        internal static string Get<TEntity>(PropertyInfo propertyInfo) =>
             Get(typeof(TEntity), propertyInfo);
 
         /// <summary>
@@ -258,8 +246,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
-        public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Remove<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -267,8 +254,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
-        public static void Remove<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static void Remove<TEntity>(string propertyName) =>
             Remove<TEntity>(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -276,8 +262,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
-        public static void Remove<TEntity>(Field field)
-            where TEntity : class =>
+        public static void Remove<TEntity>(Field field) =>
             Remove<TEntity>(TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
@@ -286,7 +271,6 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/>.</param>
         internal static void Remove<TEntity>(PropertyInfo propertyInfo)
-            where TEntity : class
         {
             // Validate
             ThrowNullReferenceException(propertyInfo, "PropertyInfo");

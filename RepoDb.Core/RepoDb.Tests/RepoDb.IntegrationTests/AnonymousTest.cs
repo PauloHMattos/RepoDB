@@ -54,7 +54,6 @@ namespace RepoDb.SqlServer.IntegrationTests
             TestExecuteQueryForAnonymousTrigger(CreateIdentityTableTypeDef());
 
         private void TestExecuteQueryForAnonymousTrigger<TAnonymous>(TAnonymous typeDef)
-            where TAnonymous : class
         {
             // Setup
             var tables = Helper.CreateIdentityTables(10);
@@ -81,7 +80,6 @@ namespace RepoDb.SqlServer.IntegrationTests
             await TestExecuteQueryAsyncForAnonymousTrigger(CreateIdentityTableTypeDef());
 
         private async Task TestExecuteQueryAsyncForAnonymousTrigger<TAnonymous>(TAnonymous typeDef)
-            where TAnonymous : class
         {
             // Setup
             var tables = Helper.CreateIdentityTables(10);
@@ -112,7 +110,6 @@ namespace RepoDb.SqlServer.IntegrationTests
             TestQueryForAnonymousTrigger(CreateIdentityTableTypeDef());
 
         private void TestQueryForAnonymousTrigger<TAnonymous>(TAnonymous typeDef)
-            where TAnonymous : class
         {
             // Setup
             var tables = Helper.CreateIdentityTables(10);
@@ -140,7 +137,6 @@ namespace RepoDb.SqlServer.IntegrationTests
             await TestQueryAsyncForAnonymousTrigger(CreateIdentityTableTypeDef());
 
         private async Task TestQueryAsyncForAnonymousTrigger<TAnonymous>(TAnonymous typeDef)
-            where TAnonymous : class
         {
             // Setup
             var tables = Helper.CreateIdentityTables(10);
@@ -172,7 +168,6 @@ namespace RepoDb.SqlServer.IntegrationTests
             TestQueryAllForAnonymousTrigger(CreateIdentityTableTypeDef());
 
         private void TestQueryAllForAnonymousTrigger<TAnonymous>(TAnonymous typeDef)
-            where TAnonymous : class
         {
             // Setup
             var tables = Helper.CreateIdentityTables(10);
@@ -199,7 +194,6 @@ namespace RepoDb.SqlServer.IntegrationTests
             await TestQueryAllAsyncForAnonymousTrigger(CreateIdentityTableTypeDef());
 
         private async Task TestQueryAllAsyncForAnonymousTrigger<TAnonymous>(TAnonymous typeDef)
-            where TAnonymous : class
         {
             // Setup
             var tables = Helper.CreateIdentityTables(10);

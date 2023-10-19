@@ -48,7 +48,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             var key = GetAndGuardPrimaryKeyOrIdentityKey(connection, tableName, transaction, GetEntityType<TEntity>(entities));
             var keys = ExtractPropertyValues<TEntity, object>(entities, PropertyCache.Get(GetEntityType<TEntity>(entities), key, true)).AsList();
@@ -88,7 +87,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteAllInternal(connection: connection,
                 tableName: tableName,
@@ -124,7 +122,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteAllInternal(connection: connection,
                 tableName: tableName,
@@ -158,7 +155,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             var key = GetAndGuardPrimaryKeyOrIdentityKey(GetEntityType<TEntity>(entities), connection, transaction);
             var keys = ExtractPropertyValues<TEntity, object>(entities, PropertyCache.Get(GetEntityType<TEntity>(entities), key, true))?.AsList();
@@ -196,7 +192,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteAllInternal(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -230,7 +225,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteAllInternal(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -262,7 +256,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteAllInternal<TEntity>(connection: connection,
                 hints: hints,
@@ -292,7 +285,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new DeleteAllRequest(typeof(TEntity),
@@ -339,7 +331,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             var key = await GetAndGuardPrimaryKeyOrIdentityKeyAsync(connection, tableName, transaction, GetEntityType<TEntity>(entities), cancellationToken);
             var keys = ExtractPropertyValues<TEntity, object>(entities, PropertyCache.Get<TEntity>(key, true)).AsList();
@@ -382,7 +373,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAllAsyncInternal(connection: connection,
                 tableName: tableName,
@@ -421,7 +411,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAllAsyncInternal(connection: connection,
                 tableName: tableName,
@@ -458,7 +447,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             var key = await GetAndGuardPrimaryKeyOrIdentityKeyAsync(GetEntityType<TEntity>(entities), connection, transaction, cancellationToken);
             var keys = ExtractPropertyValues<TEntity, object>(entities, PropertyCache.Get<TEntity>(key, true))?.AsList();
@@ -499,7 +487,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAllAsyncInternal(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -536,7 +523,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAllAsyncInternal(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -571,7 +557,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAllAsyncInternal<TEntity>(connection: connection,
                 hints: hints,
@@ -604,7 +589,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new DeleteAllRequest(typeof(TEntity),

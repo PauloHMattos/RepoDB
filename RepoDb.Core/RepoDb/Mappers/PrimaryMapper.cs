@@ -29,8 +29,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
-        public static void Add<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static void Add<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Add<TEntity>(expression, false);
 
         /// <summary>
@@ -41,7 +40,6 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(expression, "Expression");
@@ -58,8 +56,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="propertyName">The name of the class property to be mapped.</param>
-        public static void Add<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static void Add<TEntity>(string propertyName) =>
             Add<TEntity>(propertyName, false);
 
         /// <summary>
@@ -70,7 +67,6 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(string propertyName,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(propertyName, "PropertyName");
@@ -84,8 +80,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
-        public static void Add<TEntity>(Field field)
-            where TEntity : class =>
+        public static void Add<TEntity>(Field field) =>
             Add<TEntity>(field, false);
 
         /// <summary>
@@ -96,7 +91,6 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(Field field,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(field, "Field");
@@ -112,8 +106,7 @@ namespace RepoDb
         /// <param name="classProperty">The instance of <see cref="ClassProperty"/> to be mapped.</param>
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         internal static void Add<TEntity>(ClassProperty classProperty,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add(typeof(TEntity), classProperty, force);
 
         /// <summary>
@@ -160,8 +153,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <returns>An instance of the mapped <see cref="ClassProperty"/> object.</returns>
-        public static ClassProperty Get<TEntity>()
-            where TEntity : class =>
+        public static ClassProperty Get<TEntity>() =>
             Get(typeof(TEntity));
 
         /// <summary>
@@ -192,8 +184,7 @@ namespace RepoDb
         /// Removes the existing mapped primary property of the class.
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
-        public static void Remove<TEntity>()
-            where TEntity : class =>
+        public static void Remove<TEntity>() =>
             Remove(typeof(TEntity));
 
         /// <summary>

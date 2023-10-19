@@ -51,8 +51,9 @@ namespace RepoDb.Contexts.Providers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="entityType"></param>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="connection"></param>
+        /// <param name="entityType"></param>
         /// <param name="tableName"></param>
         /// <param name="entities"></param>
         /// <param name="qualifiers"></param>
@@ -62,10 +63,10 @@ namespace RepoDb.Contexts.Providers
         /// <param name="transaction"></param>
         /// <param name="statementBuilder"></param>
         /// <returns></returns>
-        public static UpdateAllExecutionContext Create(Type entityType,
+        public static UpdateAllExecutionContext<TEntity> Create<TEntity>(Type entityType,
             IDbConnection connection,
             string tableName,
-            IEnumerable<object> entities,
+            IEnumerable<TEntity> entities,
             IEnumerable<Field> qualifiers,
             int batchSize,
             IEnumerable<Field> fields,
@@ -76,7 +77,7 @@ namespace RepoDb.Contexts.Providers
             var key = GetKey(entityType, tableName, qualifiers, fields, batchSize, hints);
 
             // Get from cache
-            var context = UpdateAllExecutionContextCache.Get(key);
+            var context = UpdateAllExecutionContextCache<TEntity>.Get(key);
             if (context != null)
             {
                 return context;
@@ -105,7 +106,7 @@ namespace RepoDb.Contexts.Providers
                 commandText);
 
             // Add to cache
-            UpdateAllExecutionContextCache.Add(key, context);
+            UpdateAllExecutionContextCache<TEntity>.Add(key, context);
 
             // Return
             return context;
@@ -114,8 +115,9 @@ namespace RepoDb.Contexts.Providers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="entityType"></param>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="connection"></param>
+        /// <param name="entityType"></param>
         /// <param name="tableName"></param>
         /// <param name="entities"></param>
         /// <param name="qualifiers"></param>
@@ -126,10 +128,10 @@ namespace RepoDb.Contexts.Providers
         /// <param name="statementBuilder"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<UpdateAllExecutionContext> CreateAsync(Type entityType,
+        public static async Task<UpdateAllExecutionContext<TEntity>> CreateAsync<TEntity>(Type entityType,
             IDbConnection connection,
             string tableName,
-            IEnumerable<object> entities,
+            IEnumerable<TEntity> entities,
             IEnumerable<Field> qualifiers,
             int batchSize,
             IEnumerable<Field> fields,
@@ -141,7 +143,7 @@ namespace RepoDb.Contexts.Providers
             var key = GetKey(entityType, tableName, qualifiers, fields, batchSize, hints);
 
             // Get from cache
-            var context = UpdateAllExecutionContextCache.Get(key);
+            var context = UpdateAllExecutionContextCache<TEntity>.Get(key);
             if (context != null)
             {
                 return context;
@@ -170,7 +172,7 @@ namespace RepoDb.Contexts.Providers
                 commandText);
 
             // Add to cache
-            UpdateAllExecutionContextCache.Add(key, context);
+            UpdateAllExecutionContextCache<TEntity>.Add(key, context);
 
             // Return
             return context;
@@ -179,8 +181,9 @@ namespace RepoDb.Contexts.Providers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="entityType"></param>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="connection"></param>
+        /// <param name="entityType"></param>
         /// <param name="tableName"></param>
         /// <param name="entities"></param>
         /// <param name="dbFields"></param>
@@ -188,10 +191,10 @@ namespace RepoDb.Contexts.Providers
         /// <param name="fields"></param>
         /// <param name="commandText"></param>
         /// <returns></returns>
-        private static UpdateAllExecutionContext CreateInternal(Type entityType,
+        private static UpdateAllExecutionContext<TEntity> CreateInternal<TEntity>(Type entityType,
             IDbConnection connection,
             string tableName,
-            IEnumerable<object> entities,
+            IEnumerable<TEntity> entities,
             DbFieldCollection dbFields,
             int batchSize,
             IEnumerable<Field> fields,
@@ -211,7 +214,7 @@ namespace RepoDb.Contexts.Providers
             // Exclude the fields not on the actual entity
             if (TypeCache.Get(entityType).IsEntityType() == false)
             {
-                var entityFields = Field.Parse(entities?.FirstOrDefault());
+                var entityFields = Field.Parse(entities);
                 inputFields = inputFields?
                     .Where(field =>
                         entityFields.FirstOrDefault(f => string.Equals(f.Name.AsUnquoted(true, dbSetting), field.Name.AsUnquoted(true, dbSetting), StringComparison.OrdinalIgnoreCase)) != null)
@@ -219,13 +222,13 @@ namespace RepoDb.Contexts.Providers
             }
 
             // Variables for the context
-            Action<DbCommand, IList<object>> multipleEntitiesParametersSetterFunc = null;
-            Action<DbCommand, object> singleEntityParametersSetterFunc = null;
+            Action<DbCommand, IList<TEntity>> multipleEntitiesParametersSetterFunc = null;
+            Action<DbCommand, TEntity> singleEntityParametersSetterFunc = null;
 
             // Identity which objects to set
             if (batchSize <= 1)
             {
-                singleEntityParametersSetterFunc = FunctionCache.GetDataEntityDbParameterSetterCompiledFunction(entityType,
+                singleEntityParametersSetterFunc = FunctionCache.GetDataEntityDbParameterSetterCompiledFunction<TEntity>(entityType,
                     string.Concat(entityType.FullName, CharConstant.Period, tableName, ".UpdateAll"),
                     inputFields,
                     null,
@@ -234,7 +237,7 @@ namespace RepoDb.Contexts.Providers
             }
             else
             {
-                multipleEntitiesParametersSetterFunc = FunctionCache.GetDataEntityListDbParameterSetterCompiledFunction(entityType,
+                multipleEntitiesParametersSetterFunc = FunctionCache.GetDataEntityListDbParameterSetterCompiledFunction<TEntity>(entityType,
                     string.Concat(entityType.FullName, CharConstant.Period, tableName, ".UpdateAll"),
                     inputFields,
                     null,
@@ -244,7 +247,7 @@ namespace RepoDb.Contexts.Providers
             }
 
             // Return the value
-            return new UpdateAllExecutionContext
+            return new UpdateAllExecutionContext<TEntity>
             {
                 CommandText = commandText,
                 InputFields = inputFields,

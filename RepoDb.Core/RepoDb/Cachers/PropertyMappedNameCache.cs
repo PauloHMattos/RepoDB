@@ -28,8 +28,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>The cached column name mappings of the property.</returns>
-        public static string Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static string Get<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Get<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -38,8 +37,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The cached column name mappings of the property.</returns>
-        public static string Get<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static string Get<TEntity>(string propertyName) =>
             Get<TEntity>(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -48,8 +46,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The cached column name mappings of the property.</returns>
-        public static string Get<TEntity>(Field field)
-            where TEntity : class =>
+        public static string Get<TEntity>(Field field) =>
             Get<TEntity>(TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
@@ -58,8 +55,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="propertyInfo">The target property.</param>
         /// <returns>The cached column name mappings of the property.</returns>
-        internal static string Get<TEntity>(PropertyInfo propertyInfo)
-            where TEntity : class =>
+        internal static string Get<TEntity>(PropertyInfo propertyInfo) =>
             Get(typeof(TEntity), propertyInfo);
 
         /// <summary>

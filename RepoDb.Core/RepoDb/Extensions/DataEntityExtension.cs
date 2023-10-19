@@ -32,8 +32,7 @@ namespace RepoDb.Extensions
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <returns>The list of <see cref="ClassProperty"/> objects.</returns>
-        public static IEnumerable<ClassProperty> GetProperties<TEntity>()
-            where TEntity : class =>
+        public static IEnumerable<ClassProperty> GetProperties<TEntity>() =>
             GetProperties(typeof(TEntity));
 
         /// <summary>
@@ -157,8 +156,7 @@ namespace RepoDb.Extensions
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="propertyName"></param>
         /// <returns></returns>
-        internal static PropertyInfo GetPropertyOrThrow<TEntity>(string propertyName)
-            where TEntity : class =>
+        internal static PropertyInfo GetPropertyOrThrow<TEntity>(string propertyName) =>
             GetPropertyOrThrow(typeof(TEntity), propertyName);
 
         /// <summary>
@@ -184,8 +182,7 @@ namespace RepoDb.Extensions
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="propertyName"></param>
         /// <returns></returns>
-        internal static ClassProperty GetClassPropertyOrThrow<TEntity>(string propertyName)
-            where TEntity : class =>
+        internal static ClassProperty GetClassPropertyOrThrow<TEntity>(string propertyName) =>
             GetClassPropertyOrThrow(typeof(TEntity), propertyName);
 
         /// <summary>

@@ -38,7 +38,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return ExistsInternal<TEntity>(connection: connection,
                 where: WhatToQueryGroup(typeof(TEntity), connection, what, transaction),
@@ -72,7 +71,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return ExistsInternal<TEntity>(connection: connection,
                 where: WhatToQueryGroup(typeof(TEntity), connection, what, transaction),
@@ -105,7 +103,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return ExistsInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -138,7 +135,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return ExistsInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -171,7 +167,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return ExistsInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -204,7 +199,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return ExistsInternal<TEntity>(connection: connection,
                 where: where,
@@ -237,7 +231,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new ExistsRequest(typeof(TEntity),
@@ -291,7 +284,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await ExistsAsyncInternal<TEntity>(connection: connection,
                 where: await WhatToQueryGroupAsync(typeof(TEntity), connection, what, transaction, cancellationToken),
@@ -328,7 +320,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await ExistsAsyncInternal<TEntity>(connection: connection,
                 where: await WhatToQueryGroupAsync(typeof(TEntity), connection, what, transaction, cancellationToken),
@@ -364,7 +355,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return ExistsAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -400,7 +390,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return ExistsAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -436,7 +425,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return ExistsAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -472,7 +460,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return ExistsAsyncInternal<TEntity>(connection: connection,
                 where: where,
@@ -508,7 +495,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new ExistsRequest(typeof(TEntity),

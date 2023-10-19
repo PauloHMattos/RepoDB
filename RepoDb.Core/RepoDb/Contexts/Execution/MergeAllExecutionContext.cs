@@ -7,7 +7,8 @@ namespace RepoDb.Contexts.Execution
     /// <summary>
     /// 
     /// </summary>
-    internal class MergeAllExecutionContext
+    /// <typeparam name="TEntity"></typeparam>
+    internal class MergeAllExecutionContext<TEntity>
     {
         /// <summary>
         /// 
@@ -27,16 +28,16 @@ namespace RepoDb.Contexts.Execution
         /// <summary>
         /// 
         /// </summary>
-        public Action<DbCommand, object> SingleDataEntityParametersSetterFunc { get; set; }
+        public Action<DbCommand, TEntity> SingleDataEntityParametersSetterFunc { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Action<DbCommand, IList<object>> MultipleDataEntitiesParametersSetterFunc { get; set; }
+        public Action<DbCommand, IList<TEntity>> MultipleDataEntitiesParametersSetterFunc { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Action<object, object> KeyPropertySetterFunc { get; set; }
+        public Action<TEntity, object> KeyPropertySetterFunc { get; set; }
     }
 }

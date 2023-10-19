@@ -59,7 +59,6 @@ namespace RepoDb
         /// <returns>An instance of <see cref="OrderField"/> object.</returns>
         public static OrderField Parse<TEntity>(Expression<Func<TEntity, object>> expression,
             Order order)
-            where TEntity : class
         {
             return expression.Body switch
             {
@@ -80,7 +79,6 @@ namespace RepoDb
         /// <returns>An instance of <see cref="OrderField"/> object.</returns>
         internal static OrderField Parse<TEntity>(UnaryExpression expression,
             Order order)
-            where TEntity : class
         {
             return expression.Operand switch
             {
@@ -99,8 +97,7 @@ namespace RepoDb
         /// <param name="order">The order of the property.</param>
         /// <returns>An instance of <see cref="OrderField"/> object.</returns>
         internal static OrderField Parse<TEntity>(MemberExpression expression,
-            Order order)
-            where TEntity : class =>
+            Order order) =>
             new(expression.Member.GetMappedName(), order);
 
         /// <summary>
@@ -112,8 +109,7 @@ namespace RepoDb
         /// <param name="order">The order of the property.</param>
         /// <returns>An instance of <see cref="OrderField"/> object.</returns>
         internal static OrderField Parse<TEntity>(BinaryExpression expression,
-            Order order)
-            where TEntity : class =>
+            Order order) =>
             new(expression.GetName(), order);
 
         /// <summary>
@@ -123,8 +119,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity that contains the property to be parsed.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>An instance of <see cref="OrderField"/> object with <see cref="Order.Ascending"/> value.</returns>
-        public static OrderField Ascending<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static OrderField Ascending<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Parse(expression, Order.Ascending);
 
         /// <summary>
@@ -134,8 +129,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity that contains the property to be parsed.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>An instance of <see cref="OrderField"/> object with <see cref="Order.Descending"/> value.</returns>
-        public static OrderField Descending<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static OrderField Descending<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Parse(expression, Order.Descending);
 
         /// <summary>

@@ -65,8 +65,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>The mapped <see cref="DbType"/> object of the property.</returns>
-        public static DbType? Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static DbType? Get<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Get<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -75,8 +74,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The mapped <see cref="DbType"/> object of the property.</returns>
-        public static DbType? Get<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static DbType? Get<TEntity>(string propertyName) =>
             Get<TEntity>(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -85,8 +83,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The mapped <see cref="DbType"/> object of the property.</returns>
-        public static DbType? Get<TEntity>(Field field)
-            where TEntity : class =>
+        public static DbType? Get<TEntity>(Field field) =>
             Get<TEntity>(TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
@@ -95,8 +92,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/>.</param>
         /// <returns>The mapped <see cref="DbType"/> object of the property.</returns>
-        internal static DbType? Get<TEntity>(PropertyInfo propertyInfo)
-            where TEntity : class =>
+        internal static DbType? Get<TEntity>(PropertyInfo propertyInfo) =>
             Get(typeof(TEntity), propertyInfo) ?? Get(propertyInfo.PropertyType);
 
         /// <summary>

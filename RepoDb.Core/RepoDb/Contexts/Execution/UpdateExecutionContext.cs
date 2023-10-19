@@ -7,7 +7,7 @@ namespace RepoDb.Contexts.Execution
     /// <summary>
     /// 
     /// </summary>
-    internal class UpdateExecutionContext
+    internal class UpdateExecutionContext<TEntity>
     {
         /// <summary>
         /// The execution command text.
@@ -22,6 +22,6 @@ namespace RepoDb.Contexts.Execution
         /// <summary>
         /// 
         /// </summary>
-        public Action<DbCommand, object> ParametersSetterFunc { get; set; }
+        public Action<DbCommand, TEntity> ParametersSetterFunc { get; set; }
     }
 }

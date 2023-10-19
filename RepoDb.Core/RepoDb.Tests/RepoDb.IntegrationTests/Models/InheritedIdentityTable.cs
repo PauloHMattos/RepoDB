@@ -4,7 +4,6 @@ using System;
 namespace RepoDb.IntegrationTests.Models
 {
     public abstract class Entity<T> : IEquatable<T>
-        where T : class
     {
         public long Id { get; set; }
         public Guid RowGuid { get; set; }

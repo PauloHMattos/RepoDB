@@ -61,7 +61,7 @@ namespace RepoDb.Extensions
         /// <param name="type">The current type.</param>
         /// <returns>Returns true if the current type is a value type, and also not a primitive</returns>
         public static bool IsNonPrimitiveValueType(this Type type) {
-            return type.IsValueType && !type.IsPrimitive;
+            return type.IsValueType && !type.IsPrimitive && !type.IsEnum && !type.FullName.StartsWith("System.");
         }
 
         /// <summary>
@@ -258,8 +258,7 @@ namespace RepoDb.Extensions
         /// <typeparam name="T">The target .NET CLR type.</typeparam>
         /// <param name="propertyName">The name of the class property to be mapped.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
-        public static PropertyInfo GetProperty<T>(string propertyName)
-            where T : class =>
+        public static PropertyInfo GetProperty<T>(string propertyName) =>
             GetProperty(typeof(T), propertyName);
 
         /// <summary>

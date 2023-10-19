@@ -22,7 +22,6 @@ namespace RepoDb
         public long CountAll<TEntity>(string hints = null,
 			string traceKey = TraceKeys.CountAll,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -61,7 +60,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.CountAll,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());

@@ -6,9 +6,9 @@ namespace RepoDb.Contexts.Cachers
     /// <summary>
     /// A class that is being used to cache the execution context of the MergeAll operation.
     /// </summary>
-    public static class MergeAllExecutionContextCache
+    public static class MergeAllExecutionContextCache<TEntity>
     {
-        private static ConcurrentDictionary<string, MergeAllExecutionContext> cache = new();
+        private static ConcurrentDictionary<string, MergeAllExecutionContext<TEntity>> cache = new();
 
         /// <summary>
         /// Flushes all the cached execution context.
@@ -22,7 +22,7 @@ namespace RepoDb.Contexts.Cachers
         /// <param name="key"></param>
         /// <param name="context"></param>
         internal static void Add(string key,
-            MergeAllExecutionContext context) =>
+            MergeAllExecutionContext<TEntity> context) =>
             cache.TryAdd(key, context);
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace RepoDb.Contexts.Cachers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        internal static MergeAllExecutionContext Get(string key)
+        internal static MergeAllExecutionContext<TEntity> Get(string key)
         {
             if (cache.TryGetValue(key, out var result))
             {

@@ -31,7 +31,6 @@ namespace RepoDb
 			string cacheKey = null,
 			string traceKey = TraceKeys.QueryAll,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -76,7 +75,6 @@ namespace RepoDb
 			string cacheKey = null,
 			string traceKey = TraceKeys.QueryAll,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -128,7 +126,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.QueryAll,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -176,7 +173,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.QueryAll,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());

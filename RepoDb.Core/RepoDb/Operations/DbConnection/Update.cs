@@ -43,7 +43,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             var key = GetAndGuardPrimaryKeyOrIdentityKey(connection, tableName, transaction,
                 GetEntityType<TEntity>(entity));
@@ -88,7 +87,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -130,7 +128,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -172,7 +169,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -214,7 +210,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -256,7 +251,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -298,7 +292,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -336,7 +329,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             var key = GetAndGuardPrimaryKeyOrIdentityKey(GetEntityType<TEntity>(entity), connection, transaction);
             return UpdateInternal<TEntity>(connection: connection,
@@ -378,7 +370,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -418,7 +409,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -458,7 +448,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -498,7 +487,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -538,7 +526,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -578,7 +565,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -620,7 +606,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             if (TypeCache.Get(GetEntityType(entity)).IsDictionaryStringObject() == true)
             {
@@ -683,7 +668,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             var key = await GetAndGuardPrimaryKeyOrIdentityKeyAsync(connection, tableName, transaction,
                 GetEntityType<TEntity>(entity), cancellationToken);
@@ -731,7 +715,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -776,7 +759,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -821,7 +803,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -866,7 +847,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -911,7 +891,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -956,7 +935,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -997,7 +975,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             var key = await GetAndGuardPrimaryKeyOrIdentityKeyAsync(GetEntityType<TEntity>(entity), connection, transaction, cancellationToken);
             return await UpdateAsyncInternal<TEntity>(connection: connection,
@@ -1042,7 +1019,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1085,7 +1061,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1128,7 +1103,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1171,7 +1145,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1214,7 +1187,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1257,7 +1229,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1302,7 +1273,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             if (TypeCache.Get(GetEntityType(entity)).IsDictionaryStringObject() == true)
             {
@@ -1789,14 +1759,13 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Set the flags
             where?.IsForUpdate();
 
             // Get the context
             var entityType = GetEntityType<TEntity>(entity);
-            var context = UpdateExecutionContextProvider.Create(entityType,
+            var context = UpdateExecutionContextProvider.Create<TEntity>(entityType,
                 connection,
                 tableName,
                 where,
@@ -1872,14 +1841,13 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Set the flags
             where?.IsForUpdate();
 
             // Get the context
             var entityType = GetEntityType<TEntity>(entity);
-            var context = await UpdateExecutionContextProvider.CreateAsync(entityType,
+            var context = await UpdateExecutionContextProvider.CreateAsync<TEntity>(entityType,
                 connection,
                 tableName,
                 where,

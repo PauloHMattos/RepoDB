@@ -44,13 +44,13 @@ namespace RepoDb.UnitTests.Others
 
         #region Repositories
 
-        public interface IRepository<TModel> where TModel : class
+        public interface IRepository<TModel>
         {
             QueryGroup Parse(int id);
         }
 
         public class GenericRepository<TModel> : IRepository<TModel>
-            where TModel : class, IBaseModel, new()
+            where TModel : IBaseModel, new()
         {
             public QueryGroup Parse(int id)
             {

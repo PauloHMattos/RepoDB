@@ -490,7 +490,6 @@ namespace RepoDb.Extensions
         /// <param name="expression">The expression to be extracted.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
         internal static PropertyInfo GetProperty<T>(Expression<Func<T, object>> expression)
-            where T : class
         {
             return expression.Body switch
             {
@@ -508,7 +507,6 @@ namespace RepoDb.Extensions
         /// <param name="expression">The expression to be extracted.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
         internal static PropertyInfo GetProperty<T>(BinaryExpression expression)
-            where T : class
         {
             return expression.Left switch
             {
@@ -525,7 +523,6 @@ namespace RepoDb.Extensions
         /// <param name="expression">The expression to be extracted.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
         internal static PropertyInfo GetProperty<T>(UnaryExpression expression)
-            where T : class
         {
             return expression.Operand switch
             {
@@ -542,7 +539,6 @@ namespace RepoDb.Extensions
         /// <param name="expression">The expression to be extracted.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
         internal static PropertyInfo GetProperty<T>(MemberExpression expression)
-            where T : class
         {
             if (expression.Member is PropertyInfo propertyInfo)
             {

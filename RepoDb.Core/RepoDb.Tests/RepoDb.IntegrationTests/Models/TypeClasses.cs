@@ -21,6 +21,23 @@ namespace RepoDb.IntegrationTests.Models
     }
 
     [Map("CompleteTable")]
+    public struct NumbersStruct
+    {
+        [Primary]
+        public Guid SessionId { get; set; }
+        public long? ColumnBigInt { get; set; }
+        public bool? ColumnBit { get; set; }
+        public decimal? ColumnDecimal { get; set; }
+        public double? ColumnFloat { get; set; }
+        public int? ColumnInt { get; set; }
+        public decimal? ColumnMoney { get; set; }
+        public decimal? ColumnNumeric { get; set; }
+        public float? ColumnReal { get; set; }
+        public short? ColumnSmallInt { get; set; }
+        public decimal? ColumnSmallMoney { get; set; }
+    }
+
+    [Map("CompleteTable")]
     public class BytesClass
     {
         [Primary]

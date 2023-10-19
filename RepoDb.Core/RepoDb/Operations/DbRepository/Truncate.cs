@@ -18,7 +18,6 @@ namespace RepoDb
 		/// <param name="traceKey">The tracing key to be used.</param>
         /// <returns>The number of rows affected.</returns>
         public int Truncate<TEntity>(string traceKey = TraceKeys.Truncate)
-            where TEntity : class
         {
             // Create a connection
             var connection = CreateConnection();
@@ -49,7 +48,6 @@ namespace RepoDb
         /// <returns>The number of rows affected.</returns>
         public int Truncate<TEntity>(string traceKey = TraceKeys.Truncate,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = transaction?.Connection ?? CreateConnection();
@@ -81,7 +79,6 @@ namespace RepoDb
 		/// <param name="traceKey">The tracing key to be used.</param>
         /// <returns>The number of rows affected.</returns>
         public async Task<int> TruncateAsync<TEntity>(string traceKey = TraceKeys.Truncate)
-            where TEntity : class
         {
             // Create a connection
             var connection = CreateConnection();
@@ -112,7 +109,6 @@ namespace RepoDb
         /// <returns>The number of rows affected.</returns>
         public async Task<int> TruncateAsync<TEntity>(string traceKey = TraceKeys.Truncate,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = CreateConnection();
@@ -145,7 +141,6 @@ namespace RepoDb
         public async Task<int> TruncateAsync<TEntity>(string traceKey = TraceKeys.Truncate,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = transaction?.Connection ?? CreateConnection();

@@ -7,7 +7,6 @@ namespace RepoDb.Interfaces
     /// </summary>
     /// <typeparam name="TEntity">The type of the data entity.</typeparam>
     public interface IClassHandler<TEntity>
-        where TEntity : class
     {
         /// <summary>
         /// The method that is being invoked when the outbound execution is triggered (i.e.: BatchQuery, ExecuteQuery and Query).

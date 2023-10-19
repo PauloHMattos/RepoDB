@@ -9,8 +9,7 @@ namespace RepoDb.Reflection.Delegates
     /// </summary>
     /// <typeparam name="TEntity">The data entity object to map.</typeparam>
     /// <returns>An instance of data entity object containing the values from the <see cref="DbDataReader"/> object.</returns>
-    internal delegate Func<DbDataReader, TEntity> DataReaderToDataEntityFunction<TEntity>()
-        where TEntity : class;
+    internal delegate Func<DbDataReader, TEntity> DataReaderToDataEntityFunction<TEntity>();
 
     /// <summary>
     /// A compiled function that is used to map the <see cref="DbDataReader"/> into <see cref="ExpandoObject"/> object.

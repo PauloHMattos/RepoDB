@@ -46,7 +46,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return InsertAllInternal(connection: connection,
                 tableName: tableName,
@@ -86,7 +85,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return InsertAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -128,7 +126,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             if (TypeCache.Get(GetEntityType(entities)).IsDictionaryStringObject())
             {
@@ -136,7 +133,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities?.WithType<IDictionary<string, object>>(),
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     hints: hints,
                     commandTimeout: commandTimeout,
                     traceKey: traceKey,
@@ -150,7 +147,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities,
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     hints: hints,
                     commandTimeout: commandTimeout,
                     traceKey: traceKey,
@@ -193,7 +190,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return InsertAllAsyncInternal(connection: connection,
                 tableName: tableName,
@@ -236,7 +232,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return InsertAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -281,7 +276,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             if (TypeCache.Get(GetEntityType(entities)).IsDictionaryStringObject())
             {
@@ -289,7 +283,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities?.WithType<IDictionary<string, object>>(),
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     hints: hints,
                     commandTimeout: commandTimeout,
                     traceKey: traceKey,
@@ -304,7 +298,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities,
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     hints: hints,
                     commandTimeout: commandTimeout,
                     traceKey: traceKey,
@@ -437,7 +431,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
@@ -453,7 +446,7 @@ namespace RepoDb
 
             // Get the context
             var entityType = GetEntityType<TEntity>(entities);
-            var context = InsertAllExecutionContextProvider.Create(entityType,
+            var context = InsertAllExecutionContextProvider.Create<TEntity>(entityType,
                 connection,
                 tableName,
                 batchSize,
@@ -536,7 +529,7 @@ namespace RepoDb
                             if (batchItems.Count != batchSize)
                             {
                                 // Get a new execution context from cache
-                                context = InsertAllExecutionContextProvider.Create(entityType,
+                                context = InsertAllExecutionContextProvider.Create<TEntity>(entityType,
                                     connection,
                                     tableName,
                                     batchItems.Count,
@@ -556,7 +549,7 @@ namespace RepoDb
                             }
                             else
                             {
-                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.OfType<object>().AsList());
+                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.AsList());
                                 AddOrderColumnParameters(command, batchItems);
                             }
 
@@ -679,7 +672,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
@@ -695,7 +687,7 @@ namespace RepoDb
 
             // Get the context
             var entityType = GetEntityType<TEntity>(entities);
-            var context = await InsertAllExecutionContextProvider.CreateAsync(entityType,
+            var context = await InsertAllExecutionContextProvider.CreateAsync<TEntity>(entityType,
                 connection,
                 tableName,
                 batchSize,
@@ -779,7 +771,7 @@ namespace RepoDb
                             if (batchItems.Count != batchSize)
                             {
                                 // Get a new execution context from cache
-                                context = await InsertAllExecutionContextProvider.CreateAsync(entityType,
+                                context = await InsertAllExecutionContextProvider.CreateAsync<TEntity>(entityType,
                                     connection,
                                     tableName,
                                     batchItems.Count,
@@ -800,7 +792,7 @@ namespace RepoDb
                             }
                             else
                             {
-                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.OfType<object>().AsList());
+                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.AsList());
                                 AddOrderColumnParameters<TEntity>(command, batchItems);
                             }
 
