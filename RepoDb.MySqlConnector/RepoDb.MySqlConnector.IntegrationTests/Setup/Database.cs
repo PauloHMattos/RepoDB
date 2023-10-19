@@ -30,8 +30,8 @@ namespace RepoDb.MySqlConnector.IntegrationTests.Setup
             var connectionString = Environment.GetEnvironmentVariable("REPODB_CONSTR", EnvironmentVariableTarget.Process);
 
             // Set the connection string
-            ConnectionStringForSys = (connectionStringForSys ?? @"Server=localhost;Database=sys;Uid=user;Pwd=Password123;");
-            ConnectionString = (connectionString ?? @"Server=localhost;Database=RepoDb;Uid=user;Pwd=Password123;");
+            ConnectionStringForSys = (connectionStringForSys ?? @"Server=localhost;Database=sys;Uid=root;Pwd=admin;");
+            ConnectionString = (connectionString ?? @"Server=localhost;Database=RepoDb;Uid=root;Pwd=admin;");
 
             // Initialize MySql
             GlobalConfiguration

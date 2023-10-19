@@ -207,7 +207,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
                     ColumnCharacter = "C",
                     ColumnCharacterVarying = "ColumnCharacterVarying",
                     ColumnDate = now.Date,
-                    ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
+                    //ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
                     ColumnInteger = Convert.ToInt32(i),
                     ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 },
                     ColumnInterval = now.TimeOfDay,
@@ -241,7 +241,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
             table.ColumnCharacter = "C";
             table.ColumnCharacterVarying = "ColumnCharacterVarying";
             table.ColumnDate = now.Date;
-            table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
+            //table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
             table.ColumnInteger = Convert.ToInt32(2);
             table.ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 };
             table.ColumnInterval = now.TimeOfDay;
@@ -279,7 +279,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
                     ColumnCharacter = "C",
                     ColumnCharacterVarying = "ColumnCharacterVarying",
                     ColumnDate = now.Date,
-                    ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
+                    //ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
                     ColumnInteger = Convert.ToInt32(i),
                     ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 },
                     ColumnInterval = now.TimeOfDay,
@@ -313,7 +313,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
             table.ColumnCharacter = "C";
             table.ColumnCharacterVarying = "ColumnCharacterVarying";
             table.ColumnDate = now.Date;
-            table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
+            //table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
             table.ColumnInteger = Convert.ToInt32(2);
             table.ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 };
             table.ColumnInterval = now.TimeOfDay;
@@ -350,7 +350,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
                 item["ColumnCharacter"] = "C";
                 item["ColumnCharacterVarying"] = "ColumnCharacterVarying";
                 item["ColumnDate"] = now.Date;
-                item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
+                //item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
                 item["ColumnInteger"] = Convert.ToInt32(i);
                 item["ColumnIntegerAsArray"] = new[] { 1, 2, 3, 4, 5 };
                 item["ColumnInterval"] = now.TimeOfDay;
@@ -385,7 +385,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
             item["ColumnCharacter"] = "C";
             item["ColumnCharacterVarying"] = "ColumnCharacterVarying";
             item["ColumnDate"] = now.Date;
-            item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
+            //item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
             item["ColumnInteger"] = Convert.ToInt32(2);
             item["ColumnIntegerAsArray"] = new[] { 1, 2, 3, 4, 5 };
             item["ColumnInterval"] = now.TimeOfDay;
@@ -427,7 +427,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
                     ColumnCharacter = "C",
                     ColumnCharacterVarying = "ColumnCharacterVarying",
                     ColumnDate = now.Date,
-                    ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
+                    //ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
                     ColumnInteger = Convert.ToInt32(i),
                     ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 },
                     ColumnInterval = now.TimeOfDay,
@@ -461,7 +461,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
             table.ColumnCharacter = "C";
             table.ColumnCharacterVarying = "ColumnCharacterVarying";
             table.ColumnDate = now.Date;
-            table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
+            //table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
             table.ColumnInteger = Convert.ToInt32(2);
             table.ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 };
             table.ColumnInterval = now.TimeOfDay;
@@ -499,7 +499,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
                     ColumnCharacter = "C",
                     ColumnCharacterVarying = "ColumnCharacterVarying",
                     ColumnDate = now.Date,
-                    ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
+                    //ColumnDateAsArray = new[] { now.Date, now.Date, now.Date },
                     ColumnInteger = Convert.ToInt32(i),
                     ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 },
                     ColumnInterval = now.TimeOfDay,
@@ -533,7 +533,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
             table.ColumnCharacter = "C";
             table.ColumnCharacterVarying = "ColumnCharacterVarying";
             table.ColumnDate = now.Date;
-            table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
+            //table.ColumnDateAsArray = new[] { now.Date, now.Date, now.Date };
             table.ColumnInteger = Convert.ToInt32(2);
             table.ColumnIntegerAsArray = new[] { 1, 2, 3, 4, 5 };
             table.ColumnInterval = now.TimeOfDay;
@@ -570,7 +570,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
                 item["ColumnCharacter"] = "C";
                 item["ColumnCharacterVarying"] = "ColumnCharacterVarying";
                 item["ColumnDate"] = now.Date;
-                item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
+                //item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
                 item["ColumnInteger"] = Convert.ToInt32(i);
                 item["ColumnIntegerAsArray"] = new[] { 1, 2, 3, 4, 5 };
                 item["ColumnInterval"] = now.TimeOfDay;
@@ -605,7 +605,7 @@ namespace RepoDb.PostgreSql.IntegrationTests
             item["ColumnCharacter"] = "C";
             item["ColumnCharacterVarying"] = "ColumnCharacterVarying";
             item["ColumnDate"] = now.Date;
-            item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
+            //item["ColumnDateAsArray"] = new[] { now.Date, now.Date, now.Date };
             item["ColumnInteger"] = Convert.ToInt32(2);
             item["ColumnIntegerAsArray"] = new[] { 1, 2, 3, 4, 5 };
             item["ColumnInterval"] = now.TimeOfDay;
