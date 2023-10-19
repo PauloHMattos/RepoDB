@@ -10,8 +10,7 @@
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <returns>An instance of <see cref="EntityMapFluentDefinition{TEntity}"/> object.</returns>
-        public static EntityMapFluentDefinition<TEntity> Entity<TEntity>()
-            where TEntity : class => new();
+        public static EntityMapFluentDefinition<TEntity> Entity<TEntity>() => new();
 
         /// <summary>
         /// Defines the target .NET CLR type where to apply the mappings.

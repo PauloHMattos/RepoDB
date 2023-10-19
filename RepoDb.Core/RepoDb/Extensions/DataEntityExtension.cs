@@ -158,8 +158,7 @@ namespace RepoDb.Extensions
         /// <param name="propertyName"></param>
         /// <returns></returns>
         internal static PropertyInfo GetPropertyOrThrow<TEntity>(string propertyName)
-            where TEntity : class =>
-            GetPropertyOrThrow(typeof(TEntity), propertyName);
+            => GetPropertyOrThrow(typeof(TEntity), propertyName);
 
         /// <summary>
         /// 
@@ -185,8 +184,7 @@ namespace RepoDb.Extensions
         /// <param name="propertyName"></param>
         /// <returns></returns>
         internal static ClassProperty GetClassPropertyOrThrow<TEntity>(string propertyName)
-            where TEntity : class =>
-            GetClassPropertyOrThrow(typeof(TEntity), propertyName);
+            => GetClassPropertyOrThrow(typeof(TEntity), propertyName);
 
         /// <summary>
         /// 

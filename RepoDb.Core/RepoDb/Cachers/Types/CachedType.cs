@@ -13,6 +13,7 @@ public class CachedType
     private readonly Lazy<Type> lazyGetUnderlyingType;
     private readonly Lazy<bool> lazyIsAnonymousType;
     private readonly Lazy<bool> lazyIsClassType;
+    private readonly Lazy<bool> lazyIsNonPrimitiveValueType;
     private readonly Lazy<bool> lazyIsDictionaryStringObject;
     private readonly Lazy<bool> lazyIsNullable;
 
@@ -29,6 +30,7 @@ public class CachedType
         lazyGetProperties = new Lazy<PropertyInfo[]>(type.GetProperties);
         lazyIsAnonymousType = new Lazy<bool>(type.IsAnonymousType);
         lazyIsClassType = new Lazy<bool>(type.IsClassType);
+        lazyIsNonPrimitiveValueType = new Lazy<bool>(type.IsNonPrimitiveValueType);
         lazyIsDictionaryStringObject = new Lazy<bool>(type.IsDictionaryStringObject);
         lazyIsNullable = new Lazy<bool>(type.IsNullable);
     }
@@ -59,6 +61,12 @@ public class CachedType
     /// </summary>
     /// <returns>Returns true if the current type is a class.</returns>
     public bool IsClassType() => lazyIsClassType.Value;
+
+    /// <summary>
+    /// Checks whether the current type is a value type, and also not a primitive nor and System type.
+    /// </summary>
+    /// <returns>Returns true if the current type is a value type, and also not a primitive</returns>
+    public bool IsNonPrimitiveValueType() => lazyIsNonPrimitiveValueType.Value;
 
     /// <summary>
     /// Checks whether the current type is of type <see cref="IDictionary{TKey, TValue}"/> (with string/object key-value-pair).

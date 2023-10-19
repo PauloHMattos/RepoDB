@@ -152,6 +152,86 @@ namespace RepoDb.IntegrationTests
 
         #endregion
 
+        #region Classes
+
+        private struct WhateverStructWithNonNullableProperties
+        {
+            public int Id { get; set; }
+            public int ColumnInt { get; set; }
+            public long ColumnBigInt { get; set; }
+            public string ColumnNVarChar { get; set; }
+            public double ColumnFloat { get; set; }
+            public decimal ColumnDecimal { get; set; }
+            public DateTime ColumnDate { get; set; }
+            public TimeSpan ColumnTime { get; set; }
+            public DateTime ColumnDateTime { get; set; }
+            public DateTime ColumnDateTime2 { get; set; }
+        }
+
+        private struct WhateverStructWithNullableProperties
+        {
+            public int Id { get; set; }
+            public int? ColumnInt { get; set; }
+            public long? ColumnBigInt { get; set; }
+            public string ColumnNVarChar { get; set; }
+            public double? ColumnFloat { get; set; }
+            public decimal? ColumnDecimal { get; set; }
+            public DateTime? ColumnDate { get; set; }
+            public TimeSpan? ColumnTime { get; set; }
+            public DateTime? ColumnDateTime { get; set; }
+            public DateTime? ColumnDateTime2 { get; set; }
+        }
+
+        private struct MappedWhateverStructWithNonNullableProperties
+        {
+            [Map("Id")]
+            public int IdMapped { get; set; }
+            [Map("ColumnInt")]
+            public int ColumnIntMapped { get; set; }
+            [Map("ColumnBigInt")]
+            public long ColumnBigIntMapped { get; set; }
+            [Map("ColumnNVarChar")]
+            public string ColumnNVarCharMapped { get; set; }
+            [Map("ColumnFloat")]
+            public double ColumnFloatMapped { get; set; }
+            [Map("ColumnDecimal")]
+            public decimal ColumnDecimalMapped { get; set; }
+            [Map("ColumnDate")]
+            public DateTime ColumnDateMapped { get; set; }
+            [Map("ColumnTime")]
+            public TimeSpan ColumnTimeMapped { get; set; }
+            [Map("ColumnDateTime")]
+            public DateTime ColumnDateTimeMapped { get; set; }
+            [Map("ColumnDateTime2")]
+            public DateTime ColumnDateTime2Mapped { get; set; }
+        }
+
+        private struct MappedWhateverStructWithNullableProperties
+        {
+            [Map("Id")]
+            public int IdMapped { get; set; }
+            [Map("ColumnInt")]
+            public int? ColumnIntMapped { get; set; }
+            [Map("ColumnBigInt")]
+            public long? ColumnBigIntMapped { get; set; }
+            [Map("ColumnNVarChar")]
+            public string ColumnNVarCharMapped { get; set; }
+            [Map("ColumnFloat")]
+            public double? ColumnFloatMapped { get; set; }
+            [Map("ColumnDecimal")]
+            public decimal? ColumnDecimalMapped { get; set; }
+            [Map("ColumnDate")]
+            public DateTime? ColumnDateMapped { get; set; }
+            [Map("ColumnTime")]
+            public TimeSpan? ColumnTimeMapped { get; set; }
+            [Map("ColumnDateTime")]
+            public DateTime? ColumnDateTimeMapped { get; set; }
+            [Map("ColumnDateTime2")]
+            public DateTime? ColumnDateTime2Mapped { get; set; }
+        }
+
+        #endregion
+
 #if NET5_0_OR_GREATER
 
         #region Records
@@ -601,7 +681,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNonNullableProperties>("SELECT @Id AS Id" +
+                var query = "SELECT @Id AS Id" +
                     ", CONVERT(INT, @ColumnInt) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigInt) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar" +
@@ -610,11 +690,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATE, @ColumnDate) AS ColumnDate" +
                     ", CONVERT(TIME, @ColumnTime) AS ColumnTime" +
                     ", CONVERT(DATETIME, @ColumnDateTime) AS ColumnDateTime" +
-                    ", CONVERT(DATETIME2(7), @ColumnDateTime2) AS ColumnDateTime2;", param).FirstOrDefault();
+                    ", CONVERT(DATETIME2(7), @ColumnDateTime2) AS ColumnDateTime2;";
+                var result = connection.ExecuteQuery<WhateverClassWithNonNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNonNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -639,14 +722,17 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNonNullableProperties>("SELECT @Id AS Id" +
+                var query = "SELECT @Id AS Id" +
                     ", CONVERT(INT, @ColumnInt) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigInt) AS ColumnBigInt" +
-                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar;";
+                var result = connection.ExecuteQuery<WhateverClassWithNonNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNonNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -671,7 +757,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNonNullableProperties>("SELECT @Id AS Id" +
+                var query = "SELECT @Id AS Id" +
                     ", CONVERT(INT, @ColumnInt) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigInt) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar" +
@@ -682,11 +768,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATETIME, @ColumnDateTime) AS ColumnDateTime" +
                     ", CONVERT(DATETIME2(7), @ColumnDateTime2) AS ColumnDateTime2" +
                     ", CONVERT(DATETIME2(5), GETUTCDATE()) AS CurrentDate" +
-                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;";
+                var result = connection.ExecuteQuery<WhateverClassWithNonNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNonNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -715,7 +804,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>("SELECT @Id AS Id" +
+                var query = "SELECT @Id AS Id" +
                     ", CONVERT(INT, @ColumnInt) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigInt) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar" +
@@ -724,11 +813,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATE, @ColumnDate) AS ColumnDate" +
                     ", CONVERT(TIME, @ColumnTime) AS ColumnTime" +
                     ", CONVERT(DATETIME, @ColumnDateTime) AS ColumnDateTime" +
-                    ", CONVERT(DATETIME2(7), @ColumnDateTime2) AS ColumnDateTime2;", param).FirstOrDefault();
+                    ", CONVERT(DATETIME2(7), @ColumnDateTime2) AS ColumnDateTime2;";
+                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -753,14 +845,17 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>("SELECT @Id AS Id" +
+                var query = "SELECT @Id AS Id" +
                     ", CONVERT(INT, @ColumnInt) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigInt) AS ColumnBigInt" +
-                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar;";
+                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -785,7 +880,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>("SELECT @Id AS Id" +
+                var query = "SELECT @Id AS Id" +
                     ", CONVERT(INT, @ColumnInt) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigInt) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarChar) AS ColumnNvarChar" +
@@ -796,11 +891,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATETIME, @ColumnDateTime) AS ColumnDateTime" +
                     ", CONVERT(DATETIME2(7), @ColumnDateTime2) AS ColumnDateTime2" +
                     ", CONVERT(DATETIME2(5), GETUTCDATE()) AS CurrentDate" +
-                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;";
+                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -833,7 +931,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<MappedWhateverClassWithNonNullableProperties>("SELECT @IdMapped AS Id" +
+                var query = "SELECT @IdMapped AS Id" +
                     ", CONVERT(INT, @ColumnIntMapped) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigIntMapped) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar" +
@@ -842,11 +940,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATE, @ColumnDateMapped) AS ColumnDate" +
                     ", CONVERT(TIME, @ColumnTimeMapped) AS ColumnTime" +
                     ", CONVERT(DATETIME, @ColumnDateTimeMapped) AS ColumnDateTime" +
-                    ", CONVERT(DATETIME2(7), @ColumnDateTime2Mapped) AS ColumnDateTime2;", param).FirstOrDefault();
+                    ", CONVERT(DATETIME2(7), @ColumnDateTime2Mapped) AS ColumnDateTime2;";
+                var result = connection.ExecuteQuery<MappedWhateverClassWithNonNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<MappedWhateverStructWithNonNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -871,14 +972,17 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<MappedWhateverClassWithNonNullableProperties>("SELECT @IdMapped AS Id" +
+                var query = "SELECT @IdMapped AS Id" +
                     ", CONVERT(INT, @ColumnIntMapped) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigIntMapped) AS ColumnBigInt" +
-                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar;";
+                var result = connection.ExecuteQuery<MappedWhateverClassWithNonNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<MappedWhateverStructWithNonNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -903,7 +1007,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<MappedWhateverClassWithNonNullableProperties>("SELECT @IdMapped AS Id" +
+                var query = "SELECT @IdMapped AS Id" +
                     ", CONVERT(INT, @ColumnIntMapped) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigIntMapped) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar" +
@@ -914,11 +1018,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATETIME, @ColumnDateTimeMapped) AS ColumnDateTime" +
                     ", CONVERT(DATETIME2(7), @ColumnDateTime2Mapped) AS ColumnDateTime2" +
                     ", CONVERT(DATETIME2(5), GETUTCDATE()) AS CurrentDate" +
-                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;";
+                var result = connection.ExecuteQuery<MappedWhateverClassWithNonNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<MappedWhateverStructWithNonNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -947,7 +1054,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>("SELECT @IdMapped AS Id" +
+                var query = "SELECT @IdMapped AS Id" +
                     ", CONVERT(INT, @ColumnIntMapped) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigIntMapped) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar" +
@@ -956,11 +1063,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATE, @ColumnDateMapped) AS ColumnDate" +
                     ", CONVERT(TIME, @ColumnTimeMapped) AS ColumnTime" +
                     ", CONVERT(DATETIME, @ColumnDateTimeMapped) AS ColumnDateTime" +
-                    ", CONVERT(DATETIME2(7), @ColumnDateTime2Mapped) AS ColumnDateTime2;", param).FirstOrDefault();
+                    ", CONVERT(DATETIME2(7), @ColumnDateTime2Mapped) AS ColumnDateTime2;";
+                var result = connection.ExecuteQuery<WhateverClassWithNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<WhateverStructWithNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -985,14 +1095,17 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<MappedWhateverClassWithNullableProperties>("SELECT @IdMapped AS Id" +
+                var query = "SELECT @IdMapped AS Id" +
                     ", CONVERT(INT, @ColumnIntMapped) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigIntMapped) AS ColumnBigInt" +
-                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar;";
+                var result = connection.ExecuteQuery<MappedWhateverClassWithNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<MappedWhateverStructWithNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
@@ -1017,7 +1130,7 @@ namespace RepoDb.IntegrationTests
                 };
 
                 // Act
-                var result = connection.ExecuteQuery<MappedWhateverClassWithNullableProperties>("SELECT @IdMapped AS Id" +
+                var query = "SELECT @IdMapped AS Id" +
                     ", CONVERT(INT, @ColumnIntMapped) AS ColumnInt" +
                     ", CONVERT(BIGINT, @ColumnBigIntMapped) AS ColumnBigInt" +
                     ", CONVERT(NVARCHAR(MAX), @ColumnNvarCharMapped) AS ColumnNvarChar" +
@@ -1028,11 +1141,14 @@ namespace RepoDb.IntegrationTests
                     ", CONVERT(DATETIME, @ColumnDateTimeMapped) AS ColumnDateTime" +
                     ", CONVERT(DATETIME2(7), @ColumnDateTime2Mapped) AS ColumnDateTime2" +
                     ", CONVERT(DATETIME2(5), GETUTCDATE()) AS CurrentDate" +
-                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;", param).FirstOrDefault();
+                    ", CONVERT(NVARCHAR(128), SYSTEM_USER) AS RequestorName;";
+                var result = connection.ExecuteQuery<MappedWhateverClassWithNullableProperties>(query, param).FirstOrDefault();
+                var result2 = connection.ExecuteQuery<MappedWhateverStructWithNullableProperties>(query, param).FirstOrDefault();
 
                 // Assert
                 Assert.IsNotNull(result);
                 Helper.AssertPropertiesEquality(param, result);
+                Helper.AssertPropertiesEquality(param, result2);
             }
         }
 
