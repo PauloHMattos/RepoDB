@@ -2067,7 +2067,7 @@ namespace RepoDb.Reflection
             var propertyName = fieldDirection.DbField.Name.AsUnquoted(true, dbSetting);
 
             // Set the proper assignments (property)
-            if (TypeCache.Get(entityExpression.Type).IsClassType() == false)
+            if (TypeCache.Get(entityExpression.Type).IsEntityType() == false)
             {
                 var typeGetPropertyMethod = StaticType.Type.GetMethod("GetProperty", new[]
                 {

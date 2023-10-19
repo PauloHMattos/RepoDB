@@ -61,7 +61,7 @@ namespace RepoDb.Reflection
             var valueExpression = ConvertExpressionToTypeExpression(Expression.Call(toTypeMethod, valueParameter), targetType);
 
             // Property Handler
-            if (TypeCache.Get(entityType).IsClassType())
+            if (TypeCache.Get(entityType).IsEntityType())
             {
                 var classProperty = PropertyCache.Get(entityType, property, true);
                 valueExpression = ConvertExpressionToPropertyHandlerSetExpression(valueExpression,

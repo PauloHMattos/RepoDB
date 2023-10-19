@@ -254,7 +254,7 @@ namespace RepoDb.Contexts.Providers
                 .AsList();
 
             // Exclude the fields not on the actual entity
-            if (TypeCache.Get(entityType).IsClassType() == false)
+            if (TypeCache.Get(entityType).IsEntityType() == false)
             {
                 var entityFields = Field.Parse(entities?.FirstOrDefault());
                 inputFields = inputFields?
