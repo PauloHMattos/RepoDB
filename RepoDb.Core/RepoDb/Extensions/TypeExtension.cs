@@ -56,6 +56,15 @@ namespace RepoDb.Extensions
             StaticType.IEnumerable.IsAssignableFrom(type) != true;
 
         /// <summary>
+        /// Checks whether the current type is a value type, and also not a primitive nor and System type.
+        /// </summary>
+        /// <param name="type">The current type.</param>
+        /// <returns>Returns true if the current type is a value type, and also not a primitive</returns>
+        public static bool IsNonPrimitiveValueType(this Type type) {
+            return type.IsValueType && !type.IsPrimitive && !type.IsEnum && !type.FullName.StartsWith("System.");
+        }
+
+        /// <summary>
         /// Checks whether the current type is an anonymous type.
         /// </summary>
         /// <param name="type">The current type.</param>
@@ -81,15 +90,15 @@ namespace RepoDb.Extensions
             Nullable.GetUnderlyingType(type) != null;
 
         /// <summary>
-        /// Checks whether the current type is a plain class type.
+        /// Checks whether the current type is a plain class type or non primitive struct.
         /// </summary>
         /// <param name="type">The current type.</param>
-        /// <returns>Returns true if the current type is a plain class type.</returns>
+        /// <returns>Returns true if the current type is a plain class type or non primitive struct.</returns>
         internal static bool IsPlainType(this Type type)
         {
             var cachedType = TypeCache.Get(type);
             
-            return (cachedType.IsClassType() || cachedType.IsAnonymousType()) &&
+            return (cachedType.IsClassType() || cachedType.IsAnonymousType() || cachedType.IsNonPrimitiveValueType()) &&
                    IsQueryObjectType(type) != true &&
                    cachedType.IsDictionaryStringObject() != true &&
                    GetEnumerableClassProperties(type).Any() != true;
@@ -250,8 +259,7 @@ namespace RepoDb.Extensions
         /// <param name="propertyName">The name of the class property to be mapped.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
         public static PropertyInfo GetProperty<T>(string propertyName)
-            where T : class =>
-            GetProperty(typeof(T), propertyName);
+            => GetProperty(typeof(T), propertyName);
 
         /// <summary>
         /// A helper method to return the instance of <see cref="PropertyInfo"/> object based on name.

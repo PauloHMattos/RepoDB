@@ -157,8 +157,7 @@ namespace RepoDb
         /// <param name="dbType">The target database type.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             DbType? dbType)
-            where TEntity : class =>
-            Add<TEntity>(expression, dbType, false);
+            => Add<TEntity>(expression, dbType, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a <see cref="DbType"/> object (via expression).
@@ -170,8 +169,7 @@ namespace RepoDb
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             DbType? dbType,
             bool force)
-            where TEntity : class =>
-            Add<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression), dbType, force);
+            => Add<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression), dbType, force);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a <see cref="DbType"/> object (via property name).
@@ -181,8 +179,7 @@ namespace RepoDb
         /// <param name="dbType">The target database type.</param>
         public static void Add<TEntity>(string propertyName,
             DbType? dbType)
-            where TEntity : class =>
-            Add<TEntity>(propertyName, dbType, false);
+            => Add<TEntity>(propertyName, dbType, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a <see cref="DbType"/> object (via property name).
@@ -194,7 +191,6 @@ namespace RepoDb
         public static void Add<TEntity>(string propertyName,
             DbType? dbType,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(propertyName, "PropertyName");
@@ -211,8 +207,7 @@ namespace RepoDb
         /// <param name="dbType">The target database type.</param>
         public static void Add<TEntity>(Field field,
             DbType? dbType)
-            where TEntity : class =>
-            Add<TEntity>(field, dbType, false);
+            => Add<TEntity>(field, dbType, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a <see cref="DbType"/> object (via <see cref="Field"/> object).
@@ -224,7 +219,6 @@ namespace RepoDb
         public static void Add<TEntity>(Field field,
             DbType? dbType,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(field, "Field");
@@ -241,8 +235,7 @@ namespace RepoDb
         /// <param name="dbType">The target database type.</param>
         internal static void Add<TEntity>(PropertyInfo propertyInfo,
             DbType? dbType)
-            where TEntity : class =>
-            Add<TEntity>(propertyInfo, dbType, false);
+            => Add<TEntity>(propertyInfo, dbType, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a <see cref="PropertyInfo"/> object and a <see cref="DbType"/> object.
@@ -254,8 +247,7 @@ namespace RepoDb
         internal static void Add<TEntity>(PropertyInfo propertyInfo,
             DbType? dbType,
             bool force)
-            where TEntity : class =>
-            Add(typeof(TEntity), propertyInfo, dbType, force);
+            => Add(typeof(TEntity), propertyInfo, dbType, force);
 
         /// <summary>
         /// Property Level: Adds a mapping between a <see cref="PropertyInfo"/> object and a <see cref="DbType"/> object.
@@ -305,8 +297,7 @@ namespace RepoDb
         /// <param name="expression">The property expression.</param>
         /// <returns>The mapped <see cref="DbType"/> object of the property.</returns>
         public static DbType? Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
-            Get(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
+            => Get(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
         /// Property Level: Get the existing mapped <see cref="DbType"/> object of the class property (via property name).
@@ -315,8 +306,7 @@ namespace RepoDb
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The mapped <see cref="DbType"/> object of the property.</returns>
         public static DbType? Get<TEntity>(string propertyName)
-            where TEntity : class =>
-            Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
+            => Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
         /// Property Level: Get the existing mapped <see cref="DbType"/> object of the class property (via <see cref="Field"/> object).
@@ -360,8 +350,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="expression">The property expression.</param>
         public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
-            Remove(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
+            => Remove(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
         /// Property Level: Remove the existing mapped <see cref="DbType"/> from the class property (via property name).
@@ -369,8 +358,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         public static void Remove<TEntity>(string propertyName)
-            where TEntity : class =>
-            Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
+            => Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
         /// Property Level: Remove the existing mapped <see cref="DbType"/> from the class property (via <see cref="Field"/> object).
@@ -378,8 +366,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         public static void Remove<TEntity>(Field field)
-            where TEntity : class =>
-            Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
+            => Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
         /// Property Level: Remove the existing mapped <see cref="DbType"/> from the <see cref="PropertyInfo"/> object.

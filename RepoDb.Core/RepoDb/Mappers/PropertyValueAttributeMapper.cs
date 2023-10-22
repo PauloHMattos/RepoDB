@@ -36,8 +36,7 @@ namespace RepoDb
         /// <param name="attribute">The instance of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             PropertyValueAttribute attribute)
-            where TEntity : class =>
-            Add<TEntity>(expression, attribute, false);
+            => Add<TEntity>(expression, attribute, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and an instance of <see cref="PropertyValueAttribute"/> object (via expression).
@@ -49,8 +48,7 @@ namespace RepoDb
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             PropertyValueAttribute attribute,
             bool force)
-            where TEntity : class =>
-            Add<TEntity>(expression, new[] { attribute }, force);
+            => Add<TEntity>(expression, new[] { attribute }, force);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a list of <see cref="PropertyValueAttribute"/> object (via expression).
@@ -60,8 +58,7 @@ namespace RepoDb
         /// <param name="attributes">The list of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             IEnumerable<PropertyValueAttribute> attributes)
-            where TEntity : class =>
-            Add<TEntity>(expression, attributes, false);
+            => Add<TEntity>(expression, attributes, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a list of <see cref="PropertyValueAttribute"/> object (via expression).
@@ -73,8 +70,7 @@ namespace RepoDb
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             IEnumerable<PropertyValueAttribute> attributes,
             bool force)
-            where TEntity : class =>
-            Add(ExpressionExtension.GetProperty<TEntity>(expression), attributes, force);
+            => Add(ExpressionExtension.GetProperty<TEntity>(expression), attributes, force);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and an instance of <see cref="PropertyValueAttribute"/> object (property name).
@@ -84,8 +80,7 @@ namespace RepoDb
         /// <param name="attribute">The instance of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(string propertyName,
             PropertyValueAttribute attribute)
-            where TEntity : class =>
-            Add<TEntity>(propertyName, attribute, false);
+            => Add<TEntity>(propertyName, attribute, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and an instance of <see cref="PropertyValueAttribute"/> object (property name).
@@ -97,8 +92,7 @@ namespace RepoDb
         public static void Add<TEntity>(string propertyName,
             PropertyValueAttribute attribute,
             bool force)
-            where TEntity : class =>
-            Add<TEntity>(propertyName, new[] { attribute }, force);
+            => Add<TEntity>(propertyName, new[] { attribute }, force);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a list of <see cref="PropertyValueAttribute"/> object (via property name).
@@ -108,8 +102,7 @@ namespace RepoDb
         /// <param name="attributes">The list of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(string propertyName,
             IEnumerable<PropertyValueAttribute> attributes)
-            where TEntity : class =>
-            Add<TEntity>(propertyName, attributes, false);
+            => Add<TEntity>(propertyName, attributes, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a list of <see cref="PropertyValueAttribute"/> object (via property name).
@@ -121,7 +114,6 @@ namespace RepoDb
         public static void Add<TEntity>(string propertyName,
             IEnumerable<PropertyValueAttribute> attributes,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(propertyName, "PropertyName");
@@ -138,8 +130,7 @@ namespace RepoDb
         /// <param name="attribute">The instance of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Field field,
             PropertyValueAttribute attribute)
-            where TEntity : class =>
-            Add<TEntity>(field, attribute, false);
+            => Add<TEntity>(field, attribute, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and an instance of <see cref="PropertyValueAttribute"/> object (via <see cref="Field"/> object).
@@ -151,8 +142,7 @@ namespace RepoDb
         public static void Add<TEntity>(Field field,
             PropertyValueAttribute attribute,
             bool force)
-            where TEntity : class =>
-            Add<TEntity>(field, new[] { attribute }, force);
+            => Add<TEntity>(field, new[] { attribute }, force);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a list of <see cref="PropertyValueAttribute"/> object (via <see cref="Field"/> object).
@@ -162,8 +152,7 @@ namespace RepoDb
         /// <param name="attributes">The list of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Field field,
             IEnumerable<PropertyValueAttribute> attributes)
-            where TEntity : class =>
-            Add<TEntity>(field, attributes, false);
+            => Add<TEntity>(field, attributes, false);
 
         /// <summary>
         /// Property Level: Adds a mapping between a class property and a list of <see cref="PropertyValueAttribute"/> object (via <see cref="Field"/> object).
@@ -175,7 +164,6 @@ namespace RepoDb
         public static void Add<TEntity>(Field field,
             IEnumerable<PropertyValueAttribute> attributes,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(field, "Field");
@@ -307,8 +295,7 @@ namespace RepoDb
         /// <param name="expression">The property expression.</param>
         /// <returns>The list of mapped <see cref="PropertyValueAttribute"/> objects.</returns>
         public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
-            Get(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
+            => Get(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
         /// Get the list of mapped <see cref="PropertyValueAttribute"/> objects of the class property (via property name).
@@ -317,8 +304,7 @@ namespace RepoDb
         /// <param name="propertyName">The name of the target class property.</param>
         /// <returns>The list of mapped <see cref="PropertyValueAttribute"/> objects.</returns>
         public static IEnumerable<PropertyValueAttribute> Get<TEntity>(string propertyName)
-            where TEntity : class =>
-            Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
+            => Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
         /// Get the list of mapped <see cref="PropertyValueAttribute"/> objects of the class property (via <see cref="Field"/> object).
@@ -327,8 +313,7 @@ namespace RepoDb
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The list of mapped <see cref="PropertyValueAttribute"/> objects.</returns>
         public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Field field)
-            where TEntity : class =>
-            Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
+            => Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
         /// Get the list of mapped <see cref="PropertyValueAttribute"/> objects of the <see cref="PropertyInfo"/> object.
@@ -370,8 +355,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="expression">The property expression.</param>
         public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
-            Remove(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
+            => Remove(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
         /// Removes the existing mapped <see cref="PropertyValueAttribute"/> objects of the class property (via property name).
@@ -379,8 +363,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="propertyName">The name of the target class property.</param>
         public static void Remove<TEntity>(string propertyName)
-            where TEntity : class =>
-            Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
+            => Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
         /// Removes the existing mapped <see cref="PropertyValueAttribute"/> objects of the class property (via <see cref="Field"/> object).
@@ -388,8 +371,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         public static void Remove<TEntity>(Field field)
-            where TEntity : class =>
-            Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
+            => Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
         /// Removes the existing mapped <see cref="PropertyValueAttribute"/> objects of the <see cref="PropertyInfo"/> object.

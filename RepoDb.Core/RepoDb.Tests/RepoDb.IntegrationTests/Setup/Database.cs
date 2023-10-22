@@ -18,10 +18,10 @@ namespace RepoDb.IntegrationTests.Setup
             var connectionString = Environment.GetEnvironmentVariable("REPODB_CONSTR", EnvironmentVariableTarget.Process);
 
             // Master connection
-            ConnectionStringForMaster = (connectionStringForMaster ?? @"Server=(local);Database=master;Integrated Security=SSPI;TrustServerCertificate=True;");
+            ConnectionStringForMaster = (connectionStringForMaster ?? @"Server=.\SQLEXPRESS;Database=master;Integrated Security=SSPI;TrustServerCertificate=True;");
 
             // RepoDb connection
-            ConnectionStringForRepoDb = (connectionString ?? @"Server=(local);Database=RepoDb;Integrated Security=SSPI;TrustServerCertificate=True;");
+            ConnectionStringForRepoDb = (connectionString ?? @"Server=.\SQLEXPRESS;Database=RepoDb;Integrated Security=SSPI;TrustServerCertificate=True;");
 
             // Set the proper values for type mapper
             TypeMapper.Add(typeof(DateTime), System.Data.DbType.DateTime2, true);

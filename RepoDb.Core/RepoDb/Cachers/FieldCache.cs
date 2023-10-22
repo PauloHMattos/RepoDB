@@ -30,7 +30,8 @@ namespace RepoDb
         /// <returns>The cached list <see cref="Field"/> objects.</returns>
         public static IEnumerable<Field> Get(Type entityType)
         {
-            if (TypeCache.Get(entityType).IsClassType() == false)
+            var cachedType = TypeCache.Get(entityType);
+            if ((cachedType.IsClassType() || cachedType.IsNonPrimitiveValueType()) == false)
             {
                 return null;
             }

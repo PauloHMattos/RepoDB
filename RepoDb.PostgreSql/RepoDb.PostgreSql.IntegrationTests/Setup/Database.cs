@@ -30,10 +30,10 @@ namespace RepoDb.PostgreSql.IntegrationTests.Setup
             var connectionString = Environment.GetEnvironmentVariable("REPODB_CONSTR", EnvironmentVariableTarget.Process);
 
             // Master connection
-            ConnectionStringForPosgres = (connectionStringForPosgres ?? "Server=127.0.0.1;Port=5432;Database=postgres;User Id=postgres;Password=Password123;");
+            ConnectionStringForPosgres = (connectionStringForPosgres ?? "Server=127.0.0.1;Port=5433;Database=postgres;User Id=postgres;Password=admin;");
 
             // RepoDb connection
-            ConnectionString = (connectionString ?? "Server=127.0.0.1;Port=5432;Database=RepoDb;User Id=postgres;Password=Password123;");
+            ConnectionString = (connectionString ?? "Server=127.0.0.1;Port=5433;Database=RepoDb;User Id=postgres;Password=admin;");
 
             // For >= v6.0.0: To reutilize the legacy behavior
             // https://github.com/abpframework/abp/issues/10273
