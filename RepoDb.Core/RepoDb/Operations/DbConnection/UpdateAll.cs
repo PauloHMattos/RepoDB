@@ -47,7 +47,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -92,7 +91,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -137,7 +135,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -182,7 +179,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -223,7 +219,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -266,7 +261,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -309,7 +303,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -352,7 +345,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return UpdateAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -397,12 +389,11 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             if (qualifiers?.Any() != true)
             {
                 var key = GetAndGuardPrimaryKeyOrIdentityKey(connection, tableName, transaction,
-                    GetEntityType<TEntity>(entities));
+                    GetEntityType(entities));
                 qualifiers = key.AsEnumerable();
             }
             if (TypeCache.Get(GetEntityType(entities)).IsDictionaryStringObject())
@@ -411,7 +402,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities?.WithType<IDictionary<string, object>>(),
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     qualifiers: qualifiers,
                     hints: hints,
                     commandTimeout: commandTimeout,
@@ -426,7 +417,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities,
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     qualifiers: qualifiers,
                     hints: hints,
                     commandTimeout: commandTimeout,
@@ -470,7 +461,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -518,7 +508,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -566,7 +555,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -614,7 +602,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -658,7 +645,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -704,7 +690,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -750,7 +735,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -796,7 +780,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return UpdateAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -844,7 +827,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             if (qualifiers?.Any() != true)
             {
@@ -858,7 +840,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities?.WithType<IDictionary<string, object>>(),
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     qualifiers: qualifiers,
                     hints: hints,
                     commandTimeout: commandTimeout,
@@ -874,7 +856,7 @@ namespace RepoDb
                     tableName: tableName,
                     entities: entities,
                     batchSize: batchSize,
-                    fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                    fields: GetQualifiedFields<TEntity>(fields, entities),
                     qualifiers: qualifiers,
                     hints: hints,
                     commandTimeout: commandTimeout,
@@ -1190,7 +1172,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
@@ -1205,7 +1186,7 @@ namespace RepoDb
             batchSize = (dbSetting.IsMultiStatementExecutable == true) ? Math.Min(batchSize, entities.Count()) : 1;
 
             // Get the context
-            var entityType = GetEntityType<TEntity>(entities);
+            var entityType = GetEntityType(entities);
             var context = UpdateAllExecutionContextProvider.Create(entityType,
                 connection,
                 tableName,
@@ -1305,7 +1286,7 @@ namespace RepoDb
                             }
                             else
                             {
-                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.OfType<object>().AsList());
+                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.AsList());
                             }
 
                             // Prepare the command
@@ -1397,7 +1378,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
@@ -1412,7 +1392,7 @@ namespace RepoDb
             batchSize = (dbSetting.IsMultiStatementExecutable == true) ? Math.Min(batchSize, entities.Count()) : 1;
 
             // Get the context
-            var entityType = GetEntityType<TEntity>(entities);
+            var entityType = GetEntityType(entities);
             var context = await UpdateAllExecutionContextProvider.CreateAsync(entityType,
                 connection,
                 tableName,
@@ -1514,7 +1494,7 @@ namespace RepoDb
                             }
                             else
                             {
-                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.OfType<object>().AsList());
+                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.AsList());
                             }
 
                             // Prepare the command

@@ -19,7 +19,6 @@ namespace RepoDb
         /// <param name="reader">The <see cref="DbDataReader"/> to be converted.</param>
         /// <returns>An instance of data entity object.</returns>
         public static DataReaderToDataEntityDelegate<TEntity> GetDataReaderToDataEntityDelegate<TEntity>(DbDataReader reader)
-            where TEntity : class
         {
             return GetDataReaderToDataEntityDelegate<TEntity>(reader);
         }
@@ -32,7 +31,6 @@ namespace RepoDb
         /// <param name="basedOnFields">Check whether to create a delegate based on the data reader fields.</param>
         /// <returns>An instance of data entity object.</returns>
         internal static DataReaderToDataEntityDelegate<TEntity> GetDataReaderToDataEntityDelegate<TEntity>(DbDataReader reader, bool basedOnFields = false)
-            where TEntity : class
         {
             if (basedOnFields == false)
             {
@@ -75,7 +73,6 @@ namespace RepoDb
         #region DataReaderToDataEntityDelegateCache
 
         private static class DataReaderToDataEntityDelegateCache<TEntity>
-            where TEntity : class
         {
             private static DataReaderToDataEntityDelegate<TEntity> m_delegate;
 
@@ -94,7 +91,6 @@ namespace RepoDb
         #region FieldBasedDataReaderToDataEntityDelegateCache
 
         private static class FieldBasedDataReaderToDataEntityDelegateCache<TEntity>
-            where TEntity : class
         {
             private static ConcurrentDictionary<string, DataReaderToDataEntityDelegate<TEntity>> m_cache = new ConcurrentDictionary<string, DataReaderToDataEntityDelegate<TEntity>>();
 

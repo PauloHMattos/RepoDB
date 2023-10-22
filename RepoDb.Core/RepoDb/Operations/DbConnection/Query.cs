@@ -52,7 +52,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -107,7 +106,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -161,7 +159,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -215,7 +212,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -269,7 +265,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -323,7 +318,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -375,7 +369,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -428,7 +421,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -480,7 +472,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -531,7 +522,7 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ICache cache = null,
             ITrace trace = null,
-            IStatementBuilder statementBuilder = null) where TEntity : class
+            IStatementBuilder statementBuilder = null)
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -583,7 +574,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -635,7 +625,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return QueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -689,7 +678,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Ensure the fields
             fields = GetQualifiedFields<TEntity>(fields) ??
@@ -754,7 +742,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -812,7 +799,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -869,7 +855,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -926,7 +911,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -983,7 +967,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -1040,7 +1023,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -1095,7 +1077,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1151,7 +1132,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1206,7 +1186,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1261,7 +1240,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1316,7 +1294,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1371,7 +1348,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return QueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1428,7 +1404,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Ensure the fields
             fields = GetQualifiedFields<TEntity>(fields) ??
@@ -2144,7 +2119,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Get Cache
             if (cache != null && cacheKey != null)
@@ -2242,7 +2216,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Get Cache
             if (cache != null && cacheKey != null)

@@ -46,7 +46,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection,
                 tableName: tableName,
@@ -94,7 +93,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -142,7 +140,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -190,7 +187,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -238,7 +234,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -286,7 +281,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -330,7 +324,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -376,7 +369,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -422,7 +414,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -468,7 +459,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -514,7 +504,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -560,7 +549,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return BatchQueryInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -608,7 +596,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Ensure the fields
             fields = GetQualifiedFields<TEntity>(fields) ??
@@ -665,7 +652,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection,
                 tableName: tableName,
@@ -716,7 +702,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -767,7 +752,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -818,7 +802,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -869,7 +852,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -920,7 +902,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -967,7 +948,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1016,7 +996,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1065,7 +1044,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1114,7 +1092,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1163,7 +1140,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1212,7 +1188,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return BatchQueryAsyncInternal<TEntity>(connection: connection,
                 tableName: ClassMappedNameCache.Get<TEntity>(),
@@ -1263,7 +1238,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Ensure the fields
             fields = GetQualifiedFields<TEntity>(fields) ??
@@ -1800,7 +1774,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -1879,7 +1852,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var commandType = CommandType.Text;

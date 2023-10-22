@@ -1058,8 +1058,11 @@ namespace RepoDb.Reflection
             // Check the handler
             var handlerInstance = GetClassHandler(resultType);
             if (handlerInstance == null)
-
             {
+                if (entityOrEntitiesExpression.Type != resultType)
+                {
+                    return Expression.Convert(entityOrEntitiesExpression, resultType);
+                }
                 return entityOrEntitiesExpression;
             }
 
@@ -2067,7 +2070,7 @@ namespace RepoDb.Reflection
             var propertyName = fieldDirection.DbField.Name.AsUnquoted(true, dbSetting);
 
             // Set the proper assignments (property)
-            if (TypeCache.Get(entityExpression.Type).IsClassType() == false)
+            if (TypeCache.Get(entityExpression.Type).IsEntityType() == false)
             {
                 var typeGetPropertyMethod = StaticType.Type.GetMethod("GetProperty", new[]
                 {
@@ -2147,7 +2150,7 @@ namespace RepoDb.Reflection
             Type typeOfListEntity,
             int entityIndex)
         {
-            var listIndexerMethod = typeOfListEntity.GetMethod("get_Item", new[] { StaticType.Int32 });
+            var listIndexerMethod = entitiesParameterExpression.Type.GetMethod("get_Item", new[] { StaticType.Int32 });
             return Expression.Call(entitiesParameterExpression, listIndexerMethod,
                 Expression.Constant(entityIndex));
         }
@@ -2186,8 +2189,8 @@ namespace RepoDb.Reflection
             IDbHelper dbHelper)
         {
             // Get the current instance
-            var entityVariableExpression = Expression.Variable(StaticType.Object, "instance");
-            var typeOfListEntity = typeof(IList<>).MakeGenericType(StaticType.Object);
+            var entityVariableExpression = Expression.Variable(entityType, "instance");
+            var typeOfListEntity = typeof(IList<>).MakeGenericType(entityType);
             var entityParameter = (Expression)GetListEntityIndexerExpression(entitiesParameterExpression, typeOfListEntity, entityIndex);
             var entityExpressions = new List<Expression>();
             var entityVariables = new List<ParameterExpression>();
@@ -2199,8 +2202,11 @@ namespace RepoDb.Reflection
             entityVariables.Add(entityVariableExpression);
             entityExpressions.Add(Expression.Assign(entityVariableExpression, entityParameter));
 
-            // Throw if null
-            entityExpressions.Add(ThrowIfNullAfterClassHandlerExpression(entityType, entityVariableExpression));
+            if (entityType.IsClass)
+            {
+                // Throw if null
+                entityExpressions.Add(ThrowIfNullAfterClassHandlerExpression(entityType, entityVariableExpression));
+            }
 
             // Iterate the input fields
             foreach (var fieldDirection in fieldDirections)

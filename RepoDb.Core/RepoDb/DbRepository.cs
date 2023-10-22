@@ -476,7 +476,6 @@ namespace RepoDb
             string cacheKey = null,
             int? cacheItemExpiration = Constant.DefaultCacheItemExpirationInMinutes,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -531,7 +530,6 @@ namespace RepoDb
             int? cacheItemExpiration = Constant.DefaultCacheItemExpirationInMinutes,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());

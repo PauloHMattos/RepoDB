@@ -13,7 +13,6 @@ namespace RepoDb
     /// </summary>
     /// <typeparam name="TEntity">The type of the data entity</typeparam>
     public class DataEntityDataReader<TEntity> : DbDataReader
-        where TEntity : class
     {
         #region Fields
 
@@ -111,7 +110,7 @@ namespace RepoDb
             Enumerator = entities.GetEnumerator();
             Entities = entities;
             Properties = GetClassProperties().AsList();
-            Fields = GetFields(Entities?.FirstOrDefault() as IDictionary<string, object>).AsList();
+            Fields = GetFields(Entities.FirstOrDefault() as IDictionary<string, object>).AsList();
             fieldCount = isDictionaryStringObject ? Fields.Count : Properties.Count;
         }
 

@@ -21,8 +21,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <returns>The cached identity property.</returns>
-        public static ClassProperty Get<TEntity>()
-            where TEntity : class =>
+        public static ClassProperty Get<TEntity>() =>
             Get(typeof(TEntity));
 
         /// <summary>

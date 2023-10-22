@@ -46,7 +46,6 @@ namespace RepoDb.Reflection
             IEnumerable<TEntity> entities,
             IEnumerable<DbField> inputFields,
             IEnumerable<DbField> outputFields)
-            where TEntity : class
         {
             // Get the actual function
             var func = FunctionCache.GetDataEntitiesDbCommandParameterSetterFunction<TEntity>(tableName,

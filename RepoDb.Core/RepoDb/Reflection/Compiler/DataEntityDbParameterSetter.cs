@@ -17,17 +17,17 @@ namespace RepoDb.Reflection
         /// <param name="dbSetting"></param>
         /// <param name="dbHelper"></param>
         /// <returns></returns>
-        internal static Action<DbCommand, object> CompileDataEntityDbParameterSetter(Type entityType,
+        internal static Action<DbCommand, T> CompileDataEntityDbParameterSetter<T>(Type entityType,
             IEnumerable<DbField> inputFields,
             IEnumerable<DbField> outputFields,
             IDbSetting dbSetting,
             IDbHelper dbHelper)
         {
             var dbCommandExpression = Expression.Parameter(StaticType.DbCommand, "command");
-            var entityParameterExpression = Expression.Parameter(StaticType.Object, "entityParameter");
+            var entityParameterExpression = Expression.Parameter(typeof(T), "entityParameter");
             var dbParameterCollectionExpression = Expression.Property(dbCommandExpression,
                 StaticType.DbCommand.GetProperty("Parameters"));
-            var entityVariableExpression = Expression.Variable(StaticType.Object, "entityVariable");
+            var entityVariableExpression = Expression.Variable(entityType, "entityVariable");
             var entityExpressions = new List<Expression>();
             var entityVariableExpressions = new List<ParameterExpression>();
             var fieldDirections = new List<FieldDirection>();
@@ -47,8 +47,11 @@ namespace RepoDb.Reflection
             entityVariableExpressions.Add(entityVariableExpression);
             entityExpressions.Add(Expression.Assign(entityVariableExpression, handledEntityParameterExpression));
 
-            // Throw if null
-            entityExpressions.Add(ThrowIfNullAfterClassHandlerExpression(entityType, entityVariableExpression));
+            if (entityType.IsClass)
+            {
+                // Throw if null
+                entityExpressions.Add(ThrowIfNullAfterClassHandlerExpression(entityType, entityVariableExpression));
+            }
 
             // Iterate the input fields
             foreach (var fieldDirection in fieldDirections)
@@ -73,7 +76,7 @@ namespace RepoDb.Reflection
 
             // Set the function value
             return Expression
-                .Lambda<Action<DbCommand, object>>(Expression.Block(bodyExpressions), dbCommandExpression, entityParameterExpression)
+                .Lambda<Action<DbCommand, T>>(Expression.Block(bodyExpressions), dbCommandExpression, entityParameterExpression)
                 .Compile();
         }
     }

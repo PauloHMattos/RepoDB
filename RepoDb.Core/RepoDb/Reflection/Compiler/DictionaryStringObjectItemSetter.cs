@@ -9,10 +9,11 @@ namespace RepoDb.Reflection
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="entityType"></param>
         /// <param name="field"></param>
         /// <returns></returns>
-        internal static Action<object, object> CompileDictionaryStringObjectItemSetter(Type entityType,
+        internal static Action<TEntity, object> CompileDictionaryStringObjectItemSetter<TEntity>(Type entityType,
             Field field)
         {
             // Check the property first
@@ -42,7 +43,7 @@ namespace RepoDb.Reflection
             valueExpression = ConvertExpressionToPropertyHandlerSetExpression(valueExpression, null, null, targetType);
 
             // Assign the value into DataEntity.Property
-            var dictionaryParameter = Expression.Parameter(StaticType.Object, "entity");
+            var dictionaryParameter = Expression.Parameter(typeof(TEntity), "entity");
             var itemIndexMethod = StaticType.IDictionaryStringObject.GetMethod("set_Item", new[]
             {
                 StaticType.String,
@@ -55,7 +56,7 @@ namespace RepoDb.Reflection
 
             // Return function
             return Expression
-                .Lambda<Action<object, object>>(itemAssignment,
+                .Lambda<Action<TEntity, object>>(itemAssignment,
                     dictionaryParameter, valueParameter)
                 .Compile();
         }

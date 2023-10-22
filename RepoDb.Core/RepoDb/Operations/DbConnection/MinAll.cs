@@ -37,7 +37,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MinAllInternal<TEntity, object>(connection: connection,
                 field: field,
@@ -70,7 +69,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MinAllInternal<TEntity, object>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -104,7 +102,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MinAllInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -138,7 +135,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MinAllInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -172,7 +168,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new MinAllRequest(typeof(TEntity),
@@ -220,7 +215,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MinAllAsyncInternal<TEntity, object>(connection: connection,
                 field: field,
@@ -256,7 +250,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MinAllAsyncInternal<TEntity, object>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -293,7 +286,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MinAllAsyncInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -330,7 +322,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MinAllAsyncInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -367,7 +358,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new MinAllRequest(typeof(TEntity),

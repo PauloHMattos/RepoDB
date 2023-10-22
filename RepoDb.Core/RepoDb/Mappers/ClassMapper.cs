@@ -28,8 +28,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="name">The name of the database object (ie: Table, View).</param>
-        public static void Add<TEntity>(string name)
-            where TEntity : class =>
+        public static void Add<TEntity>(string name) =>
             Add(typeof(TEntity), name);
 
         /// <summary>
@@ -39,8 +38,7 @@ namespace RepoDb
         /// <param name="name">The name of the database object (ie: Table, View).</param>
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(string name,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add(typeof(TEntity), name, force);
 
         /// <summary>
@@ -95,8 +93,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <returns>The mapped name of the class.</returns>
-        public static string Get<TEntity>()
-            where TEntity : class =>
+        public static string Get<TEntity>() =>
             Get(typeof(TEntity));
 
         /// <summary>
@@ -123,8 +120,7 @@ namespace RepoDb
         /// Remove the exising mapped database object on the .NET CLR type.
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
-        public static void Remove<TEntity>()
-            where TEntity : class =>
+        public static void Remove<TEntity>() =>
             Remove(typeof(TEntity));
 
         /// <summary>

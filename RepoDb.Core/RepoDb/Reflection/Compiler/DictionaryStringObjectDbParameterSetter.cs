@@ -16,13 +16,13 @@ namespace RepoDb.Reflection
         /// <param name="dbSetting"></param>
         /// <param name="dbHelper"></param>
         /// <returns></returns>
-        internal static Action<DbCommand, object> CompileDictionaryStringObjectDbParameterSetter(Type entityType,
+        internal static Action<DbCommand, T> CompileDictionaryStringObjectDbParameterSetter<T>(Type entityType,
             IEnumerable<DbField> inputFields,
             IDbSetting dbSetting,
             IDbHelper dbHelper)
         {
             var dbCommandExpression = Expression.Parameter(StaticType.DbCommand, "command");
-            var entityParameterExpression = Expression.Parameter(StaticType.Object, "entityParameter");
+            var entityParameterExpression = Expression.Parameter(typeof(T), "entityParameter");
             var dbParameterCollectionExpression = Expression.Property(dbCommandExpression,
                 StaticType.DbCommand.GetProperty("Parameters"));
             var dictionaryInstanceExpression = ConvertExpressionToTypeExpression(entityParameterExpression, StaticType.IDictionaryStringObject);
@@ -47,7 +47,7 @@ namespace RepoDb.Reflection
 
             // Compile
             return Expression
-                .Lambda<Action<DbCommand, object>>(Expression.Block(bodyExpressions),
+                .Lambda<Action<DbCommand, T>>(Expression.Block(bodyExpressions),
                     dbCommandExpression,
                     entityParameterExpression)
                 .Compile();

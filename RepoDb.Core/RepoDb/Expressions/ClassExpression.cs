@@ -24,7 +24,6 @@ namespace RepoDb
         /// <returns>The values of the property of the data entities.</returns>
         public static IEnumerable<TResult> GetEntitiesPropertyValues<TEntity, TResult>(IEnumerable<TEntity> entities,
             Expression<Func<TEntity, object>> expression)
-            where TEntity : class
         {
             var property = ExpressionExtension.GetProperty<TEntity>(expression);
             var propertyCache = PropertyCache.Get<TEntity>()
@@ -43,7 +42,6 @@ namespace RepoDb
         /// <returns>The values of the property of the data entities.</returns>
         public static IEnumerable<TResult> GetEntitiesPropertyValues<TEntity, TResult>(IEnumerable<TEntity> entities,
             Field field)
-            where TEntity : class
         {
             var classProperty = PropertyCache.Get<TEntity>()
                 .Where(p => string.Equals(p.PropertyInfo.Name, field.Name, StringComparison.OrdinalIgnoreCase))
@@ -61,7 +59,6 @@ namespace RepoDb
         /// <returns>The values of the property of the data entities.</returns>
         public static IEnumerable<TResult> GetEntitiesPropertyValues<TEntity, TResult>(IEnumerable<TEntity> entities,
             string propertyName)
-            where TEntity : class
         {
             var classProperty = PropertyCache.Get<TEntity>()
                 .Where(p => string.Equals(p.PropertyInfo.Name, propertyName, StringComparison.OrdinalIgnoreCase))
@@ -78,8 +75,7 @@ namespace RepoDb
         /// <param name="property">The target property.</param>
         /// <returns>The values of the property of the data entities.</returns>
         internal static IEnumerable<TResult> GetEntitiesPropertyValues<TEntity, TResult>(IEnumerable<TEntity> entities,
-            ClassProperty property)
-            where TEntity : class =>
+            ClassProperty property) =>
             GetPropertyValuesCache<TEntity, TResult>.Do(entities, property);
 
         /// <summary>
@@ -88,7 +84,6 @@ namespace RepoDb
         /// <typeparam name="TEntity"></typeparam>
         /// <typeparam name="TResult"></typeparam>
         private static class GetPropertyValuesCache<TEntity, TResult>
-            where TEntity : class
         {
             private static ConcurrentDictionary<int, Func<TEntity, TResult>> cache = new();
 
@@ -177,8 +172,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <returns>The properties of the class.</returns>
-        public static IEnumerable<ClassProperty> GetProperties<TEntity>()
-            where TEntity : class =>
+        public static IEnumerable<ClassProperty> GetProperties<TEntity>() =>
             GetPropertiesCache<TEntity>.Do();
 
         /// <summary>
@@ -186,7 +180,6 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity"></typeparam>
         private static class GetPropertiesCache<TEntity>
-            where TEntity : class
         {
             private static Func<IEnumerable<ClassProperty>> func;
 
@@ -224,7 +217,6 @@ namespace RepoDb
         /// <param name="obj">The object to be extracted.</param>
         /// <returns>A list of <see cref="PropertyValue"/> object with extracted values.</returns>
         public static IEnumerable<PropertyValue> GetPropertiesAndValues<TEntity>(TEntity obj)
-            where TEntity : class
         {
             return GetPropertiesValuesCache<TEntity>.Do(obj);
         }
@@ -234,7 +226,6 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity"></typeparam>
         private static class GetPropertiesValuesCache<TEntity>
-            where TEntity : class
         {
             private static Func<TEntity, IEnumerable<PropertyValue>> func;
 

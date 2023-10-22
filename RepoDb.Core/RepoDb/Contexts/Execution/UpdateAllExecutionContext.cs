@@ -7,7 +7,7 @@ namespace RepoDb.Contexts.Execution
     /// <summary>
     /// 
     /// </summary>
-    internal class UpdateAllExecutionContext
+    internal class UpdateAllExecutionContext<TEntity>
     {
         /// <summary>
         /// 
@@ -22,11 +22,11 @@ namespace RepoDb.Contexts.Execution
         /// <summary>
         /// 
         /// </summary>
-        public Action<DbCommand, object> SingleDataEntityParametersSetterFunc { get; set; }
+        public Action<DbCommand, TEntity> SingleDataEntityParametersSetterFunc { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Action<DbCommand, IList<object>> MultipleDataEntitiesParametersSetterFunc { get; set; }
+        public Action<DbCommand, IList<TEntity>> MultipleDataEntitiesParametersSetterFunc { get; set; }
     }
 }

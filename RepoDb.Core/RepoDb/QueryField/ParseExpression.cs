@@ -18,7 +18,6 @@ namespace RepoDb
         /// <param name="field"></param>
         /// <returns></returns>
         private static ClassProperty GetTargetProperty<TEntity>(Field field)
-            where TEntity : class
         {
             var properties = PropertyCache.Get<TEntity>();
 
@@ -143,7 +142,6 @@ namespace RepoDb
         /// <param name="expression"></param>
         /// <returns></returns>
         internal static IEnumerable<QueryField> Parse<TEntity>(BinaryExpression expression)
-            where TEntity : class
         {
             // Only support the following expression type
             if (expression.IsExtractable() == false)
@@ -209,7 +207,6 @@ namespace RepoDb
 
         internal static IEnumerable<QueryField> Parse<TEntity>(MemberExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = GetProperty<TEntity>(expression);
@@ -245,7 +242,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static IEnumerable<QueryField> Parse<TEntity>(MethodCallExpression expression,
         ExpressionType? unaryNodeType = null)
-        where TEntity : class
         {
             if (expression.Method.Name == "Equals")
             {
@@ -285,7 +281,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static QueryField ParseEquals<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = GetProperty<TEntity>(expression);
@@ -313,7 +308,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static QueryField ParseCompareString<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = expression.Arguments.First().ToMember().Member;
@@ -334,7 +328,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static QueryField ParseContains<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = GetProperty<TEntity>(expression);
@@ -369,7 +362,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static QueryField ParseWith<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = GetProperty<TEntity>(expression);
@@ -391,7 +383,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static IEnumerable<QueryField> ParseAll<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = GetProperty<TEntity>(expression);
@@ -410,7 +401,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static IEnumerable<QueryField> ParseAny<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             // Property
             var property = GetProperty<TEntity>(expression);
@@ -428,7 +418,6 @@ namespace RepoDb
         /// <param name="expression"></param>
         /// <returns></returns>
         internal static ClassProperty GetProperty<TEntity>(Expression expression)
-            where TEntity : class
         {
             return expression switch
             {
@@ -446,8 +435,7 @@ namespace RepoDb
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        internal static ClassProperty GetProperty<TEntity>(LambdaExpression expression)
-            where TEntity : class =>
+        internal static ClassProperty GetProperty<TEntity>(LambdaExpression expression) =>
             GetProperty<TEntity>(expression.Body);
 
         /// <summary>
@@ -455,8 +443,7 @@ namespace RepoDb
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        internal static ClassProperty GetProperty<TEntity>(BinaryExpression expression)
-            where TEntity : class =>
+        internal static ClassProperty GetProperty<TEntity>(BinaryExpression expression) =>
             GetProperty<TEntity>(expression.Left) ?? GetProperty<TEntity>(expression.Right);
 
         /// <summary>
@@ -464,8 +451,7 @@ namespace RepoDb
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        internal static ClassProperty GetProperty<TEntity>(MethodCallExpression expression)
-            where TEntity : class =>
+        internal static ClassProperty GetProperty<TEntity>(MethodCallExpression expression) =>
             expression?.Object?.Type == StaticType.String ?
             GetProperty<TEntity>(expression.Object.ToMember()) :
             GetProperty<TEntity>(expression.Arguments.LastOrDefault());
@@ -475,8 +461,7 @@ namespace RepoDb
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        internal static ClassProperty GetProperty<TEntity>(MemberExpression expression)
-            where TEntity : class =>
+        internal static ClassProperty GetProperty<TEntity>(MemberExpression expression) =>
             GetProperty<TEntity>(expression.Member.ToPropertyInfo());
 
         /// <summary>
@@ -486,7 +471,6 @@ namespace RepoDb
         /// <param name="propertyInfo"></param>
         /// <returns></returns>
         internal static ClassProperty GetProperty<TEntity>(PropertyInfo propertyInfo)
-            where TEntity : class
         {
             if (propertyInfo == null)
             {

@@ -38,7 +38,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             var key = GetAndGuardPrimaryKeyOrIdentityKey(GetEntityType<TEntity>(entity), connection, transaction);
             return DeleteInternal<TEntity>(connection: connection,
@@ -73,7 +72,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteInternal<TEntity>(connection: connection,
                 where: WhatToQueryGroup(typeof(TEntity), connection, what, transaction),
@@ -106,7 +104,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteInternal<TEntity>(connection: connection,
                 where: WhatToQueryGroup(typeof(TEntity), connection, what, transaction),
@@ -139,7 +136,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -172,7 +168,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -205,7 +200,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -238,7 +232,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return DeleteInternal<TEntity>(connection: connection,
                 where: where,
@@ -271,7 +264,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new DeleteRequest(typeof(TEntity),
@@ -325,7 +317,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             var key = await GetAndGuardPrimaryKeyOrIdentityKeyAsync(GetEntityType<TEntity>(entity), connection, transaction, cancellationToken);
             return await DeleteAsyncInternal<TEntity>(connection: connection,
@@ -363,7 +354,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await DeleteAsyncInternal<TEntity>(connection: connection,
                 where: await WhatToQueryGroupAsync(typeof(TEntity), connection, what, transaction, cancellationToken),
@@ -399,7 +389,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return await DeleteAsyncInternal<TEntity>(connection: connection,
                 where: await WhatToQueryGroupAsync(typeof(TEntity), connection, what, transaction, cancellationToken),
@@ -435,7 +424,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -471,7 +459,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -507,7 +494,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAsyncInternal<TEntity>(connection: connection,
                 where: ToQueryGroup(where),
@@ -543,7 +529,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return DeleteAsyncInternal<TEntity>(connection: connection,
                 where: where,
@@ -579,7 +564,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new DeleteRequest(typeof(TEntity),

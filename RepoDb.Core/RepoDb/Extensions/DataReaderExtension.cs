@@ -19,7 +19,6 @@ namespace RepoDb.Extensions
         /// <returns>An enumerable list of data entity objects.</returns>
         [Obsolete("This extended method will be removed soon.")]
         public static IEnumerable<TEntity> AsEnumerable<TEntity>(this IDataReader reader)
-            where TEntity : class
         {
             var properties = PropertyCache.Get<TEntity>()
                 .Where(property => property.PropertyInfo.CanWrite);

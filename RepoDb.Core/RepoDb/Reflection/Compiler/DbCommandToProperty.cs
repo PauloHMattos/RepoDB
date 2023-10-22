@@ -21,7 +21,6 @@ namespace RepoDb.Reflection
             string parameterName,
             int index,
             IDbSetting dbSetting)
-            where TEntity : class
         {
             // Variables needed
             var typeOfEntity = typeof(TEntity);

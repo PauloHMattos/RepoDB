@@ -2258,7 +2258,6 @@ namespace RepoDb
         /// <param name="entities"></param>
         private static void AddOrderColumnParameters<TEntity>(DbCommand command,
             IEnumerable<TEntity> entities)
-            where TEntity : class
         {
             var index = 0;
             foreach (var item in entities)
@@ -2518,7 +2517,7 @@ namespace RepoDb
             {
                 var whatType = what.GetType();
                 var cachedType = TypeCache.Get(whatType);
-                if (cachedType.IsClassType() || cachedType.IsAnonymousType())
+                if (cachedType.IsEntityType() || cachedType.IsAnonymousType())
                 {
                     var field = GetAndGuardPrimaryKeyOrIdentityKey(connection, tableName, transaction, whatType);
                     queryGroup = WhatToQueryGroup<T>(field, what);
@@ -2557,7 +2556,7 @@ namespace RepoDb
             {
                 var whatType = what.GetType();
                 var cachedType = TypeCache.Get(whatType);
-                if (cachedType.IsClassType() || cachedType.IsAnonymousType())
+                if (cachedType.IsEntityType() || cachedType.IsAnonymousType())
                 {
                     var field = await GetAndGuardPrimaryKeyOrIdentityKeyAsync(connection, tableName, transaction, whatType, cancellationToken);
                     queryGroup = WhatToQueryGroup<T>(field, what);
@@ -2691,7 +2690,7 @@ namespace RepoDb
             {
                 throw new KeyFieldNotFoundException($"No primary key and identity key found at the type '{type.FullName}'.");
             }
-            if (TypeCache.Get(type).IsClassType())
+            if (TypeCache.Get(type).IsEntityType())
             {
                 var classProperty = PropertyCache.Get(typeof(T), field, true);
                 return new QueryGroup(classProperty?.PropertyInfo.AsQueryField(what));
@@ -2753,7 +2752,7 @@ namespace RepoDb
                 return null;
             }
             var type = obj.GetType();
-            if (TypeCache.Get(type).IsClassType())
+            if (TypeCache.Get(type).IsEntityType())
             {
                 return QueryGroup.Parse(obj, true);
             }
@@ -2779,7 +2778,7 @@ namespace RepoDb
             if (dbField != null)
             {
                 var type = entity.GetType();
-                if (TypeCache.Get(type).IsClassType())
+                if (TypeCache.Get(type).IsEntityType())
                 {
                     var properties = PropertyCache.Get(type) ?? type.GetClassProperties();
                     var property = properties?
@@ -2804,7 +2803,6 @@ namespace RepoDb
         /// <param name="where"></param>
         /// <returns></returns>
         internal static QueryGroup ToQueryGroup<TEntity>(Expression<Func<TEntity, bool>> where)
-            where TEntity : class
         {
             if (where == null)
             {
@@ -2838,7 +2836,6 @@ namespace RepoDb
         /// <returns></returns>
         internal static QueryGroup ToQueryGroup<TEntity>(Field field,
             TEntity entity)
-            where TEntity : class
         {
             var type = entity?.GetType() ?? typeof(TEntity);
             return TypeCache.Get(type).IsDictionaryStringObject() ? ToQueryGroup(field, (IDictionary<string, object>)entity) :
@@ -2853,8 +2850,7 @@ namespace RepoDb
         /// <param name="entity"></param>
         /// <returns></returns>
         internal static QueryGroup ToQueryGroup<TEntity>(ClassProperty property,
-            TEntity entity)
-            where TEntity : class =>
+            TEntity entity) =>
             ToQueryGroup(property.PropertyInfo.AsQueryField(entity));
 
         /// <summary>
@@ -2901,7 +2897,6 @@ namespace RepoDb
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="entities"></param>
         internal static void ThrowIfNullOrEmpty<TEntity>(IEnumerable<TEntity> entities)
-            where TEntity : class
         {
             if (entities == null)
             {
@@ -3006,8 +3001,7 @@ namespace RepoDb
         /// <param name="property"></param>
         /// <returns></returns>
         internal static IEnumerable<TResult> ExtractPropertyValues<TEntity, TResult>(IEnumerable<TEntity> entities,
-            ClassProperty property)
-            where TEntity : class =>
+            ClassProperty property) =>
             ClassExpression.GetEntitiesPropertyValues<TEntity, TResult>(entities, property);
 
         /// <summary>
@@ -3017,10 +3011,22 @@ namespace RepoDb
         /// <param name="entity"></param>
         /// <returns></returns>
         internal static IEnumerable<Field> GetQualifiedFields<TEntity>(TEntity entity)
-            where TEntity : class
         {
             var typeOfEntity = entity?.GetType() ?? typeof(TEntity);
-            return TypeCache.Get(typeOfEntity).IsClassType() == false ? Field.Parse(entity) : FieldCache.Get(typeOfEntity);
+            return TypeCache.Get(typeOfEntity).IsEntityType() == false ? Field.Parse(entity) : FieldCache.Get(typeOfEntity);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        internal static IEnumerable<Field> GetQualifiedFields<TEntity>(IEnumerable<TEntity> entities)
+        {
+            var entity = entities is null ? default : entities.FirstOrDefault();
+            var typeOfEntity = entity?.GetType() ?? typeof(TEntity);
+            return TypeCache.Get(typeOfEntity).IsEntityType() == false ? Field.Parse(entity) : FieldCache.Get(typeOfEntity);
         }
 
         /// <summary>
@@ -3029,8 +3035,7 @@ namespace RepoDb
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="fields"></param>
         /// <returns></returns>
-        internal static IEnumerable<Field> GetQualifiedFields<TEntity>(IEnumerable<Field> fields)
-            where TEntity : class =>
+        internal static IEnumerable<Field> GetQualifiedFields<TEntity>(IEnumerable<Field> fields) =>
             (fields ?? (TypeCache.Get(typeof(TEntity)).IsDictionaryStringObject() == false ? FieldCache.Get<TEntity>() : null)).AsList();
 
         /// <summary>
@@ -3041,9 +3046,19 @@ namespace RepoDb
         /// <param name="entity"></param>
         /// <returns></returns>
         internal static IEnumerable<Field> GetQualifiedFields<TEntity>(IEnumerable<Field> fields,
-            TEntity entity)
-            where TEntity : class =>
+            TEntity entity) =>
             (fields ?? GetQualifiedFields(entity)).AsList();
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="fields"></param>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        internal static IEnumerable<Field> GetQualifiedFields<TEntity>(IEnumerable<Field> fields,
+            IEnumerable<TEntity> entities) =>
+            (fields ?? GetQualifiedFields(entities)).AsList();
 
         /// <summary>
         ///
@@ -3641,9 +3656,8 @@ namespace RepoDb
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="entities"></param>
         /// <returns></returns>
-        internal static string GetMappedName<TEntity>(IEnumerable<TEntity> entities)
-            where TEntity : class =>
-            GetMappedName<TEntity>(entities?.FirstOrDefault());
+        internal static string GetMappedName<TEntity>(IEnumerable<TEntity> entities) =>
+            GetMappedName<TEntity>(entities.FirstOrDefault());
 
         /// <summary>
         /// 
@@ -3651,8 +3665,7 @@ namespace RepoDb
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        internal static string GetMappedName<TEntity>(TEntity entity)
-            where TEntity : class =>
+        internal static string GetMappedName<TEntity>(TEntity entity) =>
             entity != null ? ClassMappedNameCache.Get(entity.GetType()) : ClassMappedNameCache.Get<TEntity>();
 
         /// <summary>
@@ -3661,9 +3674,8 @@ namespace RepoDb
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="entities"></param>
         /// <returns></returns>
-        internal static Type GetEntityType<TEntity>(IEnumerable<TEntity> entities)
-            where TEntity : class =>
-            GetEntityType<TEntity>(entities?.FirstOrDefault());
+        internal static Type GetEntityType<TEntity>(IEnumerable<TEntity> entities) =>
+            GetEntityType(entities.FirstOrDefault());
 
         /// <summary>
         /// 
@@ -3672,8 +3684,7 @@ namespace RepoDb
         /// <param name="entity"></param>
         /// <returns></returns>
         internal static Type GetEntityType<TEntity>(TEntity entity)
-            where TEntity : class =>
-            entity?.GetType() ?? typeof(TEntity);
+            => entity?.GetType() ?? typeof(TEntity);
 
         #endregion
     }

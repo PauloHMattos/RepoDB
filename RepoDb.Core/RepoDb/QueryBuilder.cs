@@ -317,8 +317,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of data entity object bound for the SQL Statement to be created.</typeparam>
         /// <param name="dbSetting">The currently in used <see cref="IDbSetting"/> object.</param>
         /// <returns>The current instance.</returns>
-        public QueryBuilder FieldsFrom<TEntity>(IDbSetting dbSetting)
-            where TEntity : class =>
+        public QueryBuilder FieldsFrom<TEntity>(IDbSetting dbSetting) =>
             FieldsFrom(PropertyCache.Get<TEntity>()?.AsFields(), dbSetting);
 
         /// <summary>
@@ -337,8 +336,7 @@ namespace RepoDb
         /// <param name="index">The parameter index.</param>
         /// <param name="dbSetting">The currently in used <see cref="IDbSetting"/> object.</param>
         /// <returns>The current instance.</returns>
-        public QueryBuilder FieldsAndParametersFrom<TEntity>(int index, IDbSetting dbSetting)
-            where TEntity : class =>
+        public QueryBuilder FieldsAndParametersFrom<TEntity>(int index, IDbSetting dbSetting) =>
             FieldsAndParametersFrom(FieldCache.Get<TEntity>(), index, dbSetting);
 
         /// <summary>
@@ -362,7 +360,6 @@ namespace RepoDb
         public QueryBuilder FieldsAndAliasFieldsFrom<TEntity>(string leftAlias,
             string rightAlias,
             IDbSetting dbSetting)
-            where TEntity : class
         {
             var fields = PropertyCache.Get<TEntity>()?.Select(property => property.GetMappedName());
             return AppendJoin(fields?.AsFieldsAndAliasFields(leftAlias, rightAlias, dbSetting));
@@ -388,7 +385,6 @@ namespace RepoDb
         /// <returns>The current instance.</returns>
         public QueryBuilder AsAliasFieldsFrom<TEntity>(string alias,
             IDbSetting dbSetting)
-            where TEntity : class
         {
             var fields = PropertyCache.Get<TEntity>()?.Select(property => property.GetMappedName());
             return AppendJoin(fields?.AsAliasFields(alias, dbSetting));
@@ -574,8 +570,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of data entity object bound for the SQL Statement to be created.</typeparam>
         /// <param name="dbSetting">The currently in used <see cref="IDbSetting"/> object.</param>
         /// <returns>The current instance.</returns>
-        public QueryBuilder TableNameFrom<TEntity>(IDbSetting dbSetting)
-            where TEntity : class =>
+        public QueryBuilder TableNameFrom<TEntity>(IDbSetting dbSetting) =>
             TableNameFrom(ClassMappedNameCache.Get<TEntity>(), dbSetting);
 
         /// <summary>
@@ -594,8 +589,7 @@ namespace RepoDb
         /// <param name="index">The parameter index.</param>
         /// <param name="dbSetting">The currently in used <see cref="IDbSetting"/> object.</param>
         /// <returns>The current instance.</returns>
-        public QueryBuilder ParametersFrom<TEntity>(int index, IDbSetting dbSetting)
-            where TEntity : class =>
+        public QueryBuilder ParametersFrom<TEntity>(int index, IDbSetting dbSetting) =>
             ParametersFrom(FieldCache.Get<TEntity>(), index, dbSetting);
 
         /// <summary>
@@ -617,7 +611,6 @@ namespace RepoDb
         /// <returns>The current instance.</returns>
         public QueryBuilder ParametersAsFieldsFrom<TEntity>(int index,
             IDbSetting dbSetting)
-            where TEntity : class
         {
             var fields = PropertyCache
                 .Get<TEntity>()?

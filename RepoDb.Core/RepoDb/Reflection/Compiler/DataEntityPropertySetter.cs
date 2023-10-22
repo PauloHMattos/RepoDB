@@ -10,17 +10,18 @@ namespace RepoDb.Reflection
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="entityType"></param>
         /// <param name="field"></param>
         /// <returns></returns>
-        internal static Action<object, object> CompileDataEntityPropertySetter(Type entityType,
+        internal static Action<TEntity, object> CompileDataEntityPropertySetter<TEntity>(Type entityType,
             Field field)
         {
             // Get the entity property
             var property = entityType.GetMappedProperty(field.Name)?.PropertyInfo;
 
             // Return the function
-            return CompileDataEntityPropertySetter(entityType,
+            return CompileDataEntityPropertySetter<TEntity>(entityType,
                 property,
                 property?.PropertyType ?? field.Type);
         }
@@ -28,11 +29,12 @@ namespace RepoDb.Reflection
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
         /// <param name="entityType"></param>
         /// <param name="property"></param>
         /// <param name="targetType"></param>
         /// <returns></returns>
-        internal static Action<object, object> CompileDataEntityPropertySetter(Type entityType,
+        internal static Action<TEntity, object> CompileDataEntityPropertySetter<TEntity>(Type entityType,
             PropertyInfo property,
             Type targetType)
         {
@@ -61,7 +63,7 @@ namespace RepoDb.Reflection
             var valueExpression = ConvertExpressionToTypeExpression(Expression.Call(toTypeMethod, valueParameter), targetType);
 
             // Property Handler
-            if (TypeCache.Get(entityType).IsClassType())
+            if (TypeCache.Get(entityType).IsEntityType())
             {
                 var classProperty = PropertyCache.Get(entityType, property, true);
                 valueExpression = ConvertExpressionToPropertyHandlerSetExpression(valueExpression,
@@ -69,12 +71,12 @@ namespace RepoDb.Reflection
             }
 
             // Assign the value into DataEntity.Property
-            var entityParameter = Expression.Parameter(StaticType.Object, "entity");
+            var entityParameter = Expression.Parameter(typeof(TEntity), "entity");
             var propertyAssignment = Expression.Call(Expression.Convert(entityParameter, entityType), property.SetMethod,
                 valueExpression);
 
             // Return function
-            return Expression.Lambda<Action<object, object>>(propertyAssignment,
+            return Expression.Lambda<Action<TEntity, object>>(propertyAssignment,
                 entityParameter, valueParameter).Compile();
         }
     }

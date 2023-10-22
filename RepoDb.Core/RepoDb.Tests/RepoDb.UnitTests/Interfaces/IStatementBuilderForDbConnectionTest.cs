@@ -909,7 +909,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertExecutionContextCache.Flush();
+            InsertExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.Insert<StatementBuilderEntity>(
                 new StatementBuilderEntity
@@ -956,7 +956,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertExecutionContextCache.Flush();
+            InsertExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.Insert(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new
@@ -1003,7 +1003,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertExecutionContextCache.Flush();
+            InsertExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.Insert<StatementBuilderEntityForCrossCall>(
                 new StatementBuilderEntityForCrossCall
@@ -1055,7 +1055,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.InsertAll<StatementBuilderEntity>(new[]
             {
@@ -1106,7 +1106,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.InsertAll<StatementBuilderEntity>(new[]
             {
@@ -1153,7 +1153,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.InsertAll(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -1208,7 +1208,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.InsertAll(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -1263,7 +1263,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.InsertAll<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -1317,7 +1317,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.InsertAll<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -1601,7 +1601,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeExecutionContextCache.Flush();
+            MergeExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.Merge<StatementBuilderEntity>(
                 new StatementBuilderEntity
@@ -1652,7 +1652,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeExecutionContextCache.Flush();
+            MergeExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.Merge(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new
@@ -1703,7 +1703,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeExecutionContextCache.Flush();
+            MergeExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.Merge<StatementBuilderEntityForCrossCall>(
                 new StatementBuilderEntityForCrossCall
@@ -1759,7 +1759,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.MergeAll<StatementBuilderEntity>(
                 new[]
@@ -1816,7 +1816,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.MergeAll<StatementBuilderEntity>(
                 new[]
@@ -1869,7 +1869,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.MergeAll(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -1926,7 +1926,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.MergeAll(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -1979,7 +1979,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.MergeAll<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -2037,7 +2037,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.MergeAll<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -3042,7 +3042,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateExecutionContextCache.Flush();
+            UpdateExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.Update<StatementBuilderEntity>(new StatementBuilderEntity { Name = "Update" },
                 e => e.Id == 1,
@@ -3085,7 +3085,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateExecutionContextCache.Flush();
+            UpdateExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.Update(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new
@@ -3142,7 +3142,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateExecutionContextCache.Flush();
+            UpdateExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.Update<StatementBuilderEntityForCrossCall>(new StatementBuilderEntityForCrossCall { Name = "Update" },
                 e => e.Id == 1,
@@ -3197,7 +3197,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateAllExecutionContextCache.Flush();
+            UpdateAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             connection.UpdateAll<StatementBuilderEntity>(
                 new[]
@@ -3254,7 +3254,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateAllExecutionContextCache.Flush();
+            UpdateAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             connection.UpdateAll(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -3311,7 +3311,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateAllExecutionContextCache.Flush();
+            UpdateAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             connection.UpdateAll<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -4189,7 +4189,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertExecutionContextCache.Flush();
+            InsertExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAsync<StatementBuilderEntity>(
                 new StatementBuilderEntity
@@ -4236,7 +4236,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertExecutionContextCache.Flush();
+            InsertExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new
@@ -4283,7 +4283,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertExecutionContextCache.Flush();
+            InsertExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAsync<StatementBuilderEntityForCrossCall>(
                 new StatementBuilderEntityForCrossCall
@@ -4335,7 +4335,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAllAsync<StatementBuilderEntity>(new[]
             {
@@ -4386,7 +4386,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAllAsync<StatementBuilderEntity>(new[]
             {
@@ -4433,7 +4433,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAllAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -4488,7 +4488,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAllAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -4539,7 +4539,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAllAsync<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -4593,7 +4593,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            InsertAllExecutionContextCache.Flush();
+            InsertAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.InsertAllAsync<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -4877,7 +4877,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeExecutionContextCache.Flush();
+            MergeExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAsync<StatementBuilderEntity>(
                 new StatementBuilderEntity
@@ -4928,7 +4928,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeExecutionContextCache.Flush();
+            MergeExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new
@@ -4979,7 +4979,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeExecutionContextCache.Flush();
+            MergeExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAsync<StatementBuilderEntityForCrossCall>(
                 new StatementBuilderEntityForCrossCall
@@ -5035,7 +5035,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAllAsync<StatementBuilderEntity>(
                 new[]
@@ -5062,7 +5062,7 @@ namespace RepoDb.UnitTests.Interfaces
             var statementBuilderNever = new Mock<IStatementBuilder>();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntity>.Flush();
             await connection.MergeAllAsync<StatementBuilderEntity>(
                 new[]
                 {
@@ -5093,7 +5093,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAllAsync<StatementBuilderEntity>(
                 new[]
@@ -5146,7 +5146,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAllAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -5203,7 +5203,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAllAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -5256,7 +5256,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAllAsync<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -5314,7 +5314,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            MergeAllExecutionContextCache.Flush();
+            MergeAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.MergeAllAsync<StatementBuilderEntityForCrossCall>(
                 new[]
@@ -6319,7 +6319,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateExecutionContextCache.Flush();
+            UpdateExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.UpdateAsync<StatementBuilderEntity>(new StatementBuilderEntity { Name = "Update" },
                 e => e.Id == 1,
@@ -6362,7 +6362,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateExecutionContextCache.Flush();
+            UpdateExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.UpdateAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new
@@ -6419,7 +6419,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateExecutionContextCache.Flush();
+            UpdateExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await connection.UpdateAsync<StatementBuilderEntityForCrossCall>(new StatementBuilderEntityForCrossCall { Name = "Update" },
                 e => e.Id == 1,
@@ -6474,7 +6474,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateAllExecutionContextCache.Flush();
+            UpdateAllExecutionContextCache<StatementBuilderEntity>.Flush();
             CommandTextCache.Flush();
             await connection.UpdateAllAsync<StatementBuilderEntity>(
                 new[]
@@ -6531,7 +6531,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateAllExecutionContextCache.Flush();
+            UpdateAllExecutionContextCache<StatementBuilderEntityForTableName>.Flush();
             CommandTextCache.Flush();
             await connection.UpdateAllAsync(ClassMappedNameCache.Get<StatementBuilderEntityForTableName>(),
                 new[]
@@ -6588,7 +6588,7 @@ namespace RepoDb.UnitTests.Interfaces
             var connection = new StatementBuilderDbConnection();
 
             // Act
-            UpdateAllExecutionContextCache.Flush();
+            UpdateAllExecutionContextCache<StatementBuilderEntityForCrossCall>.Flush();
             CommandTextCache.Flush();
             await  connection.UpdateAllAsync<StatementBuilderEntityForCrossCall>(
                 new[]

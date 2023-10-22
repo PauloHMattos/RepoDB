@@ -19,8 +19,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <returns>The cached list <see cref="Field"/> objects.</returns>
-        public static IEnumerable<Field> Get<TEntity>()
-            where TEntity : class =>
+        public static IEnumerable<Field> Get<TEntity>() => 
             Get(typeof(TEntity));
 
         /// <summary>
@@ -30,7 +29,7 @@ namespace RepoDb
         /// <returns>The cached list <see cref="Field"/> objects.</returns>
         public static IEnumerable<Field> Get(Type entityType)
         {
-            if (TypeCache.Get(entityType).IsClassType() == false)
+            if (TypeCache.Get(entityType).IsEntityType() == false)
             {
                 return null;
             }

@@ -56,6 +56,15 @@ namespace RepoDb.Extensions
             StaticType.IEnumerable.IsAssignableFrom(type) != true;
 
         /// <summary>
+        /// Checks whether the current type is a value type, and also not a primitive nor and System type.
+        /// </summary>
+        /// <param name="type">The current type.</param>
+        /// <returns>Returns true if the current type is a value type, and also not a primitive</returns>
+        public static bool IsNonPrimitiveValueType(this Type type) {
+            return type.IsValueType && !type.IsPrimitive && !type.IsEnum && !type.FullName.StartsWith("System.");
+        }
+
+        /// <summary>
         /// Checks whether the current type is an anonymous type.
         /// </summary>
         /// <param name="type">The current type.</param>
@@ -89,7 +98,7 @@ namespace RepoDb.Extensions
         {
             var cachedType = TypeCache.Get(type);
             
-            return (cachedType.IsClassType() || cachedType.IsAnonymousType()) &&
+            return (cachedType.IsEntityType() || cachedType.IsAnonymousType()) &&
                    IsQueryObjectType(type) != true &&
                    cachedType.IsDictionaryStringObject() != true &&
                    GetEnumerableClassProperties(type).Any() != true;
@@ -249,8 +258,7 @@ namespace RepoDb.Extensions
         /// <typeparam name="T">The target .NET CLR type.</typeparam>
         /// <param name="propertyName">The name of the class property to be mapped.</param>
         /// <returns>An instance of <see cref="PropertyInfo"/> object.</returns>
-        public static PropertyInfo GetProperty<T>(string propertyName)
-            where T : class =>
+        public static PropertyInfo GetProperty<T>(string propertyName) =>
             GetProperty(typeof(T), propertyName);
 
         /// <summary>

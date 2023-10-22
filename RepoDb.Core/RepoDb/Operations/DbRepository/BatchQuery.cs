@@ -34,7 +34,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -84,7 +83,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -135,7 +133,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
 
             // Create a connection
@@ -187,7 +184,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -238,7 +234,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -289,7 +284,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -336,7 +330,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -383,7 +376,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -431,7 +423,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -479,7 +470,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -527,7 +517,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -575,7 +564,6 @@ namespace RepoDb
             string hints = null,
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -628,7 +616,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -681,7 +668,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -735,7 +721,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
 
             // Create a connection
@@ -790,7 +775,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -844,7 +828,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -894,7 +877,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -944,7 +926,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -996,7 +977,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1048,7 +1028,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1100,7 +1079,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());
@@ -1152,7 +1130,6 @@ namespace RepoDb
 			string traceKey = TraceKeys.BatchQuery,
             IDbTransaction transaction = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Create a connection
             var connection = (transaction?.Connection ?? CreateConnection());

@@ -17,13 +17,13 @@ namespace RepoDb.Reflection
         /// <param name="dbSetting"></param>
         /// <param name="dbHelper"></param>
         /// <returns></returns>
-        internal static Action<DbCommand, IList<object>> CompileDictionaryStringObjectListDbParameterSetter(Type entityType,
+        internal static Action<DbCommand, IList<T>> CompileDictionaryStringObjectListDbParameterSetter<T>(Type entityType,
             IEnumerable<DbField> inputFields,
             int batchSize,
             IDbSetting dbSetting,
             IDbHelper dbHelper)
         {
-            var typeOfListEntity = typeof(IList<>).MakeGenericType(StaticType.Object);
+            var typeOfListEntity = typeof(IList<>).MakeGenericType(typeof(T));
             var getItemMethod = typeOfListEntity.GetMethod("get_Item", new[] { StaticType.Int32 });
             var dbCommandExpression = Expression.Parameter(StaticType.DbCommand, "command");
             var entitiesParameterExpression = Expression.Parameter(typeOfListEntity, "entities");
@@ -57,7 +57,7 @@ namespace RepoDb.Reflection
 
             // Compile
             return Expression
-                .Lambda<Action<DbCommand, IList<object>>>(Expression.Block(bodyExpressions),
+                .Lambda<Action<DbCommand, IList<T>>>(Expression.Block(bodyExpressions),
                     dbCommandExpression,
                     entitiesParameterExpression)
                 .Compile();

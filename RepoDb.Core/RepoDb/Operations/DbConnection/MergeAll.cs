@@ -48,7 +48,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -93,7 +92,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -138,7 +136,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -183,7 +180,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -224,7 +220,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -267,7 +262,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -310,7 +304,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -353,7 +346,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeAllInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -398,7 +390,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Check the qualifiers
             if (qualifiers?.Any() != true)
@@ -421,7 +412,7 @@ namespace RepoDb
                         entities: entities?.WithType<IDictionary<string, object>>(),
                         qualifiers: qualifiers,
                         batchSize: batchSize,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities.FirstOrDefault()),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -436,7 +427,7 @@ namespace RepoDb
                         entities: entities,
                         qualifiers: qualifiers,
                         batchSize: batchSize,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities.FirstOrDefault()),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -453,7 +444,7 @@ namespace RepoDb
                         tableName: tableName,
                         entities: entities?.WithType<IDictionary<string, object>>(),
                         qualifiers: qualifiers,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -467,7 +458,7 @@ namespace RepoDb
                         tableName: tableName,
                         entities: entities,
                         qualifiers: qualifiers,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -511,7 +502,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -559,7 +549,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -607,7 +596,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -655,7 +643,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: tableName,
@@ -699,7 +686,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -745,7 +731,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -791,7 +776,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -837,7 +821,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAllAsyncInternal<TEntity>(connection: connection,
                 tableName: GetMappedName<TEntity>(entities),
@@ -885,7 +868,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Check the qualifiers
             if (qualifiers?.Any() != true)
@@ -908,7 +890,7 @@ namespace RepoDb
                         entities: entities?.WithType<IDictionary<string, object>>(),
                         qualifiers: qualifiers,
                         batchSize: batchSize,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -924,7 +906,7 @@ namespace RepoDb
                         entities: entities,
                         qualifiers: qualifiers,
                         batchSize: batchSize,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -942,7 +924,7 @@ namespace RepoDb
                         tableName: tableName,
                         entities: entities?.WithType<IDictionary<string, object>>(),
                         qualifiers: qualifiers,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -957,7 +939,7 @@ namespace RepoDb
                         tableName: tableName,
                         entities: entities,
                         qualifiers: qualifiers,
-                        fields: GetQualifiedFields<TEntity>(fields, entities?.FirstOrDefault()),
+                        fields: GetQualifiedFields<TEntity>(fields, entities),
                         hints: hints,
                         commandTimeout: commandTimeout,
                 traceKey: traceKey,
@@ -1273,7 +1255,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
@@ -1398,7 +1379,7 @@ namespace RepoDb
                             }
                             else
                             {
-                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.OfType<object>().AsList());
+                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.AsList());
                                 AddOrderColumnParameters(command, batchItems);
                             }
 
@@ -1519,7 +1500,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var type = GetEntityType<TEntity>(entities);
@@ -1658,7 +1638,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var dbSetting = connection.GetDbSetting();
@@ -1674,7 +1653,7 @@ namespace RepoDb
 
             // Get the context
             var entityType = GetEntityType<TEntity>(entities);
-            var context = await MergeAllExecutionContextProvider.CreateAsync(entityType,
+            var context = await MergeAllExecutionContextProvider.CreateAsync<TEntity>(entityType,
                 connection,
                 entities,
                 tableName,
@@ -1785,7 +1764,7 @@ namespace RepoDb
                             }
                             else
                             {
-                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.OfType<object>().AsList());
+                                context.MultipleDataEntitiesParametersSetterFunc?.Invoke(command, batchItems.AsList());
                                 AddOrderColumnParameters<TEntity>(command, batchItems);
                             }
 
@@ -1909,7 +1888,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var type = GetEntityType<TEntity>(entities);

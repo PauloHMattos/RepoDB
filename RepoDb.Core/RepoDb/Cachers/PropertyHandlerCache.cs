@@ -77,8 +77,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the handler.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>The mapped <see cref="IPropertyHandler{TInput, TResult}"/> object of the property.</returns>
-        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression) =>
             Get<TEntity, TPropertyHandler>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -88,8 +87,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the handler.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The mapped <see cref="IPropertyHandler{TInput, TResult}"/> object of the property.</returns>
-        public static TPropertyHandler Get<TEntity, TPropertyHandler>(string propertyName)
-            where TEntity : class =>
+        public static TPropertyHandler Get<TEntity, TPropertyHandler>(string propertyName) =>
             Get<TEntity, TPropertyHandler>(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -99,8 +97,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the handler.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The mapped <see cref="IPropertyHandler{TInput, TResult}"/> object of the property.</returns>
-        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Field field)
-            where TEntity : class =>
+        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Field field) =>
             Get<TEntity, TPropertyHandler>(TypeExtension.GetProperty<TEntity>(field.Name));
 
 
@@ -111,8 +108,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the handler.</typeparam>
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/>.</param>
         /// <returns>The mapped <see cref="IPropertyHandler{TInput, TResult}"/> object of the property.</returns>
-        internal static TPropertyHandler Get<TEntity, TPropertyHandler>(PropertyInfo propertyInfo)
-            where TEntity : class =>
+        internal static TPropertyHandler Get<TEntity, TPropertyHandler>(PropertyInfo propertyInfo) =>
             Get<TPropertyHandler>(typeof(TEntity), propertyInfo);
 
         /// <summary>

@@ -167,7 +167,6 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         public static void Add<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add(expression, new TPropertyHandler(), false);
 
@@ -179,8 +178,7 @@ namespace RepoDb
         /// <param name="expression">The expression to be parsed.</param>
         /// <param name="propertyHandler">The instance of the property handler.</param>
         public static void Add<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression,
-            TPropertyHandler propertyHandler)
-            where TEntity : class =>
+            TPropertyHandler propertyHandler) =>
             Add<TEntity, TPropertyHandler>(expression, propertyHandler, false);
 
         /// <summary>
@@ -193,7 +191,6 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression,
             bool force)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add(expression, new TPropertyHandler(), force);
 
@@ -207,8 +204,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression,
             TPropertyHandler propertyHandler,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add<TEntity, TPropertyHandler>(ExpressionExtension.GetProperty<TEntity>(expression), propertyHandler, force);
 
         /// <summary>
@@ -219,7 +215,6 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="propertyName">The instance of property handler.</param>
         public static void Add<TEntity, TPropertyHandler>(string propertyName)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add<TEntity, TPropertyHandler>(propertyName, new TPropertyHandler(), false);
 
@@ -231,8 +226,7 @@ namespace RepoDb
         /// <param name="propertyName">The instance of property handler.</param>
         /// <param name="propertyHandler">The instance of the property handler.</param>
         public static void Add<TEntity, TPropertyHandler>(string propertyName,
-            TPropertyHandler propertyHandler)
-            where TEntity : class =>
+            TPropertyHandler propertyHandler) =>
             Add<TEntity, TPropertyHandler>(propertyName, propertyHandler, false);
 
         /// <summary>
@@ -245,7 +239,6 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity, TPropertyHandler>(string propertyName,
             bool force)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add<TEntity, TPropertyHandler>(propertyName, new TPropertyHandler(), false);
 
@@ -260,7 +253,6 @@ namespace RepoDb
         public static void Add<TEntity, TPropertyHandler>(string propertyName,
             TPropertyHandler propertyHandler,
             bool force)
-            where TEntity : class
         {
             // Validates
             ThrowNullReferenceException(propertyName, "PropertyName");
@@ -284,7 +276,6 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
         public static void Add<TEntity, TPropertyHandler>(Field field)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add<TEntity, TPropertyHandler>(field, new TPropertyHandler(), false);
 
@@ -296,8 +287,7 @@ namespace RepoDb
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
         /// <param name="propertyHandler">The instance of the property handler.</param>
         public static void Add<TEntity, TPropertyHandler>(Field field,
-            TPropertyHandler propertyHandler)
-            where TEntity : class =>
+            TPropertyHandler propertyHandler) =>
             Add<TEntity, TPropertyHandler>(field, propertyHandler, false);
 
         /// <summary>
@@ -310,7 +300,6 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity, TPropertyHandler>(Field field,
             bool force)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add<TEntity, TPropertyHandler>(field, new TPropertyHandler(), false);
 
@@ -325,7 +314,6 @@ namespace RepoDb
         public static void Add<TEntity, TPropertyHandler>(Field field,
             TPropertyHandler propertyHandler,
             bool force)
-            where TEntity : class
         {
             // Validates
             ThrowNullReferenceException(field, "Field");
@@ -349,7 +337,6 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/> to be mapped.</param>
         internal static void Add<TEntity, TPropertyHandler>(PropertyInfo propertyInfo)
-            where TEntity : class
             where TPropertyHandler : new() =>
             Add<TEntity, TPropertyHandler>(propertyInfo, new TPropertyHandler(), false);
 
@@ -361,8 +348,7 @@ namespace RepoDb
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/> to be mapped.</param>
         /// <param name="propertyHandler">The instance of the property handler.</param>
         internal static void Add<TEntity, TPropertyHandler>(PropertyInfo propertyInfo,
-            TPropertyHandler propertyHandler)
-            where TEntity : class =>
+            TPropertyHandler propertyHandler) =>
             Add<TEntity, TPropertyHandler>(propertyInfo, propertyHandler, false);
 
         /// <summary>
@@ -375,8 +361,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         internal static void Add<TEntity, TPropertyHandler>(PropertyInfo propertyInfo,
             TPropertyHandler propertyHandler,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add<TPropertyHandler>(typeof(TEntity), propertyInfo, propertyHandler, force);
 
 
@@ -444,8 +429,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>The mapped property handler object of the property.</returns>
-        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Expression<Func<TEntity, object>> expression) =>
             Get<TEntity, TPropertyHandler>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -455,8 +439,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
         /// <returns>The mapped property handler object of the property.</returns>
-        public static TPropertyHandler Get<TEntity, TPropertyHandler>(string propertyName)
-            where TEntity : class =>
+        public static TPropertyHandler Get<TEntity, TPropertyHandler>(string propertyName) =>
             Get<TEntity, TPropertyHandler>(TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -466,8 +449,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The mapped property handler object of the property.</returns>
-        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Field field)
-            where TEntity : class =>
+        public static TPropertyHandler Get<TEntity, TPropertyHandler>(Field field) =>
             Get<TEntity, TPropertyHandler>(TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
@@ -477,8 +459,7 @@ namespace RepoDb
         /// <typeparam name="TPropertyHandler">The type of the property handler.</typeparam>
         /// <param name="propertyInfo">The instance of <see cref="PropertyInfo"/>.</param>
         /// <returns>The mapped property handler object of the property.</returns>
-        internal static TPropertyHandler Get<TEntity, TPropertyHandler>(PropertyInfo propertyInfo)
-            where TEntity : class =>
+        internal static TPropertyHandler Get<TEntity, TPropertyHandler>(PropertyInfo propertyInfo) =>
             Get<TPropertyHandler>(typeof(TEntity), propertyInfo);
 
         /// <summary>
@@ -517,8 +498,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
-        public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Remove<TEntity>(ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -527,7 +507,6 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="propertyName">The instance of property handler.</param>
         public static void Remove<TEntity>(string propertyName)
-            where TEntity : class
         {
             // Validates
             ThrowNullReferenceException(propertyName, "PropertyName");
@@ -549,7 +528,6 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target .NET CLR type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
         public static void Remove<TEntity>(Field field)
-            where TEntity : class
         {
             // Validates
             ThrowNullReferenceException(field, "Field");

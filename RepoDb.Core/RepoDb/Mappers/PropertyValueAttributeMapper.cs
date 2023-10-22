@@ -35,8 +35,7 @@ namespace RepoDb
         /// <param name="expression">The property expression.</param>
         /// <param name="attribute">The instance of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
-            PropertyValueAttribute attribute)
-            where TEntity : class =>
+            PropertyValueAttribute attribute) =>
             Add<TEntity>(expression, attribute, false);
 
         /// <summary>
@@ -48,8 +47,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             PropertyValueAttribute attribute,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add<TEntity>(expression, new[] { attribute }, force);
 
         /// <summary>
@@ -59,8 +57,7 @@ namespace RepoDb
         /// <param name="expression">The property expression.</param>
         /// <param name="attributes">The list of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
-            IEnumerable<PropertyValueAttribute> attributes)
-            where TEntity : class =>
+            IEnumerable<PropertyValueAttribute> attributes) =>
             Add<TEntity>(expression, attributes, false);
 
         /// <summary>
@@ -72,8 +69,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(Expression<Func<TEntity, object>> expression,
             IEnumerable<PropertyValueAttribute> attributes,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add(ExpressionExtension.GetProperty<TEntity>(expression), attributes, force);
 
         /// <summary>
@@ -83,8 +79,7 @@ namespace RepoDb
         /// <param name="propertyName">The name of the target class property.</param>
         /// <param name="attribute">The instance of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(string propertyName,
-            PropertyValueAttribute attribute)
-            where TEntity : class =>
+            PropertyValueAttribute attribute) =>
             Add<TEntity>(propertyName, attribute, false);
 
         /// <summary>
@@ -96,8 +91,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(string propertyName,
             PropertyValueAttribute attribute,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add<TEntity>(propertyName, new[] { attribute }, force);
 
         /// <summary>
@@ -107,8 +101,7 @@ namespace RepoDb
         /// <param name="propertyName">The name of the target class property.</param>
         /// <param name="attributes">The list of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(string propertyName,
-            IEnumerable<PropertyValueAttribute> attributes)
-            where TEntity : class =>
+            IEnumerable<PropertyValueAttribute> attributes) =>
             Add<TEntity>(propertyName, attributes, false);
 
         /// <summary>
@@ -121,7 +114,6 @@ namespace RepoDb
         public static void Add<TEntity>(string propertyName,
             IEnumerable<PropertyValueAttribute> attributes,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(propertyName, "PropertyName");
@@ -137,8 +129,7 @@ namespace RepoDb
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
         /// <param name="attribute">The instance of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Field field,
-            PropertyValueAttribute attribute)
-            where TEntity : class =>
+            PropertyValueAttribute attribute) =>
             Add<TEntity>(field, attribute, false);
 
         /// <summary>
@@ -150,8 +141,7 @@ namespace RepoDb
         /// <param name="force">A value that indicates whether to force the mapping. If one is already exists, then it will be overwritten.</param>
         public static void Add<TEntity>(Field field,
             PropertyValueAttribute attribute,
-            bool force)
-            where TEntity : class =>
+            bool force) =>
             Add<TEntity>(field, new[] { attribute }, force);
 
         /// <summary>
@@ -161,8 +151,7 @@ namespace RepoDb
         /// <param name="field">The instance of <see cref="Field"/> object to be mapped.</param>
         /// <param name="attributes">The list of <see cref="PropertyValueAttribute"/> object.</param>
         public static void Add<TEntity>(Field field,
-            IEnumerable<PropertyValueAttribute> attributes)
-            where TEntity : class =>
+            IEnumerable<PropertyValueAttribute> attributes) =>
             Add<TEntity>(field, attributes, false);
 
         /// <summary>
@@ -175,7 +164,6 @@ namespace RepoDb
         public static void Add<TEntity>(Field field,
             IEnumerable<PropertyValueAttribute> attributes,
             bool force)
-            where TEntity : class
         {
             // Validates
             ObjectExtension.ThrowIfNull(field, "Field");
@@ -306,8 +294,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="expression">The property expression.</param>
         /// <returns>The list of mapped <see cref="PropertyValueAttribute"/> objects.</returns>
-        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Get(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -316,8 +303,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="propertyName">The name of the target class property.</param>
         /// <returns>The list of mapped <see cref="PropertyValueAttribute"/> objects.</returns>
-        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(string propertyName) =>
             Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -326,8 +312,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
         /// <returns>The list of mapped <see cref="PropertyValueAttribute"/> objects.</returns>
-        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Field field)
-            where TEntity : class =>
+        public static IEnumerable<PropertyValueAttribute> Get<TEntity>(Field field) =>
             Get(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>
@@ -369,8 +354,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="expression">The property expression.</param>
-        public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static void Remove<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Remove(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression));
 
         /// <summary>
@@ -378,8 +362,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="propertyName">The name of the target class property.</param>
-        public static void Remove<TEntity>(string propertyName)
-            where TEntity : class =>
+        public static void Remove<TEntity>(string propertyName) =>
             Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(propertyName));
 
         /// <summary>
@@ -387,8 +370,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The target type.</typeparam>
         /// <param name="field">The instance of <see cref="Field"/> object.</param>
-        public static void Remove<TEntity>(Field field)
-            where TEntity : class =>
+        public static void Remove<TEntity>(Field field) =>
             Remove(typeof(TEntity), TypeExtension.GetProperty<TEntity>(field.Name));
 
         /// <summary>

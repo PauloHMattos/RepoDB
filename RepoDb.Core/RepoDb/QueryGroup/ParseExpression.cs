@@ -44,7 +44,6 @@ namespace RepoDb
         /// <param name="expression">The expression to be converted to a <see cref="QueryGroup"/> object.</param>
         /// <returns>An instance of the <see cref="QueryGroup"/> object that contains the parsed query expression.</returns>
         public static QueryGroup Parse<TEntity>(Expression<Func<TEntity, bool>> expression)
-            where TEntity : class
         {
             // Guard the presence of the expression
             if (expression == null)
@@ -77,7 +76,6 @@ namespace RepoDb
         /// <param name="expression"></param>
         /// <returns></returns>
         private static QueryGroup Parse<TEntity>(Expression expression)
-            where TEntity : class
         {
             return expression switch
             {
@@ -100,7 +98,6 @@ namespace RepoDb
         /// <param name="expression"></param>
         /// <returns></returns>
         private static QueryGroup Parse<TEntity>(BinaryExpression expression)
-            where TEntity : class
         {
             // Check directness
             if (IsDirect(expression))
@@ -143,7 +140,6 @@ namespace RepoDb
         /// <param name="expression"></param>
         /// <returns></returns>
         private static QueryGroup Parse<TEntity>(UnaryExpression expression)
-            where TEntity : class
         {
             return expression.Operand switch
             {
@@ -166,7 +162,6 @@ namespace RepoDb
         /// <returns></returns>
         private static QueryGroup Parse<TEntity>(MemberExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             var queryFields = QueryField.Parse<TEntity>(expression, unaryNodeType);
             return queryFields != null ? new QueryGroup(queryFields) : null;
@@ -183,7 +178,6 @@ namespace RepoDb
         /// <param name="expression"></param>
         /// <returns></returns>
         private static QueryGroup Parse<TEntity>(MethodCallExpression expression)
-            where TEntity : class
         {
             var unaryNodeType = (expression?.Object?.Type == StaticType.String) ? GetNodeType(expression.Object.ToMember()) :
                 GetNodeType(expression.Arguments.LastOrDefault());
@@ -199,7 +193,6 @@ namespace RepoDb
         /// <returns></returns>
         private static QueryGroup Parse<TEntity>(MethodCallExpression expression,
             ExpressionType? unaryNodeType = null)
-            where TEntity : class
         {
             var queryFields = QueryField.Parse<TEntity>(expression, unaryNodeType);
             return queryFields != null ? new QueryGroup(queryFields, GetConjunction(expression)) : null;

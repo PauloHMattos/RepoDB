@@ -28,11 +28,11 @@ namespace RepoDb.SqlServer.IntegrationTests.Setup
         {
             // Master connection
             ConnectionStringForMaster = Environment.GetEnvironmentVariable("REPODB_CONSTR_MASTER", EnvironmentVariableTarget.Process) ??
-                @"Server=(local);Database=master;Integrated Security=SSPI;TrustServerCertificate=True;";
+                @"Server=.\SQLEXPRESS;Database=master;Integrated Security=SSPI;TrustServerCertificate=True;";
 
             // RepoDb connection
             ConnectionString = Environment.GetEnvironmentVariable("REPODB_CONSTR", EnvironmentVariableTarget.Process) ??
-                @"Server=(local);Database=RepoDbTest;Integrated Security=SSPI;TrustServerCertificate=True;";
+                @"Server=.\SQLEXPRESS;Database=RepoDbTest;Integrated Security=SSPI;TrustServerCertificate=True;";
 
             // Initialize the SqlServer
             GlobalConfiguration

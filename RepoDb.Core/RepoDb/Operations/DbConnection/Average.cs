@@ -41,7 +41,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: field,
@@ -77,7 +76,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: field,
@@ -113,7 +111,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: field,
@@ -149,7 +146,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: field,
@@ -185,7 +181,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: field,
@@ -221,7 +216,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -257,7 +251,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -293,7 +286,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -329,7 +321,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -365,7 +356,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -401,7 +391,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new AverageRequest(typeof(TEntity),
@@ -453,7 +442,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -490,7 +478,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -527,7 +514,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -564,7 +550,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -601,7 +586,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -638,7 +622,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -675,7 +658,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -712,7 +694,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -749,7 +730,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -786,7 +766,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return AverageInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -823,7 +802,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables
             var request = new AverageRequest(typeof(TEntity),
@@ -880,7 +858,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: field,
@@ -919,7 +896,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: field,
@@ -958,7 +934,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: field,
@@ -997,7 +972,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: field,
@@ -1036,7 +1010,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: field,
@@ -1075,7 +1048,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -1114,7 +1086,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -1153,7 +1124,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -1192,7 +1162,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -1231,7 +1200,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity>(connection: connection,
                 field: Field.Parse<TEntity>(field).First(),
@@ -1270,7 +1238,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new AverageRequest(typeof(TEntity),
@@ -1325,7 +1292,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -1365,7 +1331,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -1405,7 +1370,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -1445,7 +1409,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -1485,7 +1448,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: field,
@@ -1525,7 +1487,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -1565,7 +1526,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -1605,7 +1565,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -1645,7 +1604,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -1685,7 +1643,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return AverageAsyncInternal<TEntity, TResult>(connection: connection,
                 field: Field.Parse<TEntity, TResult>(field).First(),
@@ -1725,7 +1682,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables
             var request = new AverageRequest(typeof(TEntity),

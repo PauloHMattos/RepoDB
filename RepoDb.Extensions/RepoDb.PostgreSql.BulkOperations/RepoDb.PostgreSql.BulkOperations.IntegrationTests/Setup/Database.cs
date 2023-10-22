@@ -15,9 +15,9 @@ namespace RepoDb.IntegrationTests.Setup
         {
             // Set the connection string
             ConnectionStringForPosgres = Environment.GetEnvironmentVariable("REPODB_CONSTR_POSTGRESDB", EnvironmentVariableTarget.Process) ??
-                "Server=127.0.0.1;Port=5432;Database=postgres;User Id=postgres;Password=Password123;";
+                "Server=127.0.0.1;Port=5433;Database=postgres;User Id=postgres;Password=admin;";
             ConnectionStringForRepoDb = Environment.GetEnvironmentVariable("REPODB_CONSTR", EnvironmentVariableTarget.Process)??
-                "Server=127.0.0.1;Port=5432;Database=RepoDb;User Id=postgres;Password=Password123;";
+                "Server=127.0.0.1;Port=5433;Database=RepoDb;User Id=postgres;Password=admin;";
             
             // Initialize PostgreSql
             GlobalConfiguration.Setup().UsePostgreSql();

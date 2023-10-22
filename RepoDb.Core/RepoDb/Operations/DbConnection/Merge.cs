@@ -45,7 +45,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -87,7 +86,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -129,7 +127,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -171,7 +168,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -212,7 +208,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -255,7 +250,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -298,7 +292,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -341,7 +334,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -379,7 +371,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -419,7 +410,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -459,7 +449,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -499,7 +488,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -538,7 +526,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -579,7 +566,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -620,7 +606,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -661,7 +646,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             return MergeInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -704,7 +688,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var setting = connection.GetDbSetting();
@@ -805,7 +788,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -850,7 +832,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -895,7 +876,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -940,7 +920,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: tableName,
@@ -984,7 +963,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -1030,7 +1008,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -1076,7 +1053,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -1122,7 +1098,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: tableName,
@@ -1163,7 +1138,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1206,7 +1180,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1249,7 +1222,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1292,7 +1264,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, object>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1334,7 +1305,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1378,7 +1348,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1422,7 +1391,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1466,7 +1434,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             return MergeAsyncInternal<TEntity, TResult>(connection: connection,
                 tableName: GetMappedName<TEntity>(entity),
@@ -1512,7 +1479,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var setting = connection.GetDbSetting();
@@ -2122,7 +2088,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Check the qualifiers
             if (qualifiers?.Any() != true)
@@ -2134,7 +2099,7 @@ namespace RepoDb
 
             // Get the context
             var entityType = entity?.GetType() ?? typeof(TEntity);
-            var context = MergeExecutionContextProvider.Create(entityType,
+            var context = MergeExecutionContextProvider.Create<TEntity>(entityType,
                 connection,
                 tableName,
                 qualifiers,
@@ -2211,7 +2176,6 @@ namespace RepoDb
             IDbTransaction transaction = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where TEntity : class
         {
             // Variables needed
             var type = entity?.GetType() ?? typeof(TEntity);
@@ -2372,7 +2336,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Check the qualifiers
             if (qualifiers?.Any() != true)
@@ -2384,7 +2347,7 @@ namespace RepoDb
 
             // Get the context
             var entityType = entity?.GetType() ?? typeof(TEntity);
-            var context = await MergeExecutionContextProvider.CreateAsync(entityType,
+            var context = await MergeExecutionContextProvider.CreateAsync<TEntity>(entityType,
                 connection,
                 tableName,
                 qualifiers,
@@ -2464,7 +2427,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where TEntity : class
         {
             // Variables needed
             var type = entity?.GetType() ?? typeof(TEntity);

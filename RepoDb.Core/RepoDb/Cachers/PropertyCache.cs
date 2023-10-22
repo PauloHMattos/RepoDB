@@ -23,8 +23,7 @@ namespace RepoDb
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <param name="expression">The expression to be parsed.</param>
         /// <returns>The instance of cached <see cref="ClassProperty"/> object.</returns>
-        public static ClassProperty Get<TEntity>(Expression<Func<TEntity, object>> expression)
-            where TEntity : class =>
+        public static ClassProperty Get<TEntity>(Expression<Func<TEntity, object>> expression) =>
             Get(typeof(TEntity), ExpressionExtension.GetProperty<TEntity>(expression), false);
 
         /// <summary>
@@ -35,8 +34,7 @@ namespace RepoDb
         /// <param name="includeMappings">True to evaluate the existing mappings.</param>
         /// <returns>The instance of cached <see cref="ClassProperty"/> object.</returns>
         public static ClassProperty Get<TEntity>(string propertyName,
-            bool includeMappings = false)
-            where TEntity : class =>
+            bool includeMappings = false) =>
             Get(typeof(TEntity), propertyName, includeMappings);
 
         /// <summary>
@@ -68,8 +66,7 @@ namespace RepoDb
         /// <param name="includeMappings">True to evaluate the existing mappings.</param>
         /// <returns>The instance of cached <see cref="ClassProperty"/> object.</returns>
         public static ClassProperty Get<TEntity>(Field field,
-            bool includeMappings = false)
-            where TEntity : class =>
+            bool includeMappings = false) =>
             Get(typeof(TEntity), field, includeMappings);
 
         /// <summary>
@@ -113,8 +110,7 @@ namespace RepoDb
         /// </summary>
         /// <typeparam name="TEntity">The type of the data entity.</typeparam>
         /// <returns>The cached list <see cref="ClassProperty"/> objects.</returns>
-        public static IEnumerable<ClassProperty> Get<TEntity>()
-            where TEntity : class =>
+        public static IEnumerable<ClassProperty> Get<TEntity>() =>
             Get(typeof(TEntity));
 
         /// <summary>
@@ -124,7 +120,7 @@ namespace RepoDb
         /// <returns>The cached list <see cref="ClassProperty"/> objects.</returns>
         public static IEnumerable<ClassProperty> Get(Type entityType)
         {
-            if (entityType is null || TypeCache.Get(entityType).IsClassType() != true)
+            if (entityType is null || TypeCache.Get(entityType).IsEntityType() != true)
             {
                 return null;
             }

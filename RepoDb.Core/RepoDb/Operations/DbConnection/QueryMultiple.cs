@@ -68,8 +68,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 where1: WhatToQueryGroup(typeof(T1), connection, what1, transaction),
@@ -139,8 +137,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -210,8 +206,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -281,8 +275,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -352,8 +344,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 where1: where1,
@@ -423,8 +413,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -513,9 +501,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 where1: WhatToQueryGroup(what1),
@@ -604,9 +589,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -695,9 +677,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -786,9 +765,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -877,9 +853,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 where1: where1,
@@ -968,9 +941,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -1080,10 +1050,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 where1: WhatToQueryGroup(what1),
@@ -1192,10 +1158,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -1304,10 +1266,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -1416,10 +1374,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -1528,10 +1482,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 where1: where1,
@@ -1640,10 +1590,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -1773,11 +1719,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: WhatToQueryGroup(what1),
@@ -1905,11 +1846,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -2037,11 +1973,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -2169,11 +2100,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -2301,11 +2227,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: where1,
@@ -2433,11 +2354,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -2587,12 +2503,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: WhatToQueryGroup(what1),
@@ -2739,12 +2649,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -2891,12 +2795,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -3043,12 +2941,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -3195,12 +3087,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: where1,
@@ -3347,12 +3233,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -3522,13 +3402,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: WhatToQueryGroup(what1),
@@ -3694,13 +3567,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -3866,13 +3732,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -4038,13 +3897,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -4210,13 +4062,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: where1,
@@ -4382,13 +4227,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -4505,8 +4343,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 where1: await WhatToQueryGroupAsync(typeof(T1), connection, what1, transaction, cancellationToken),
@@ -4579,8 +4415,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -4653,8 +4487,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -4727,8 +4559,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -4801,8 +4631,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 where1: where1,
@@ -4875,8 +4703,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -4968,9 +4794,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 where1: await WhatToQueryGroupAsync(typeof(T1), connection, what1, transaction, cancellationToken),
@@ -5062,9 +4885,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -5156,9 +4976,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -5250,9 +5067,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -5344,9 +5158,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 where1: where1,
@@ -5438,9 +5249,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -5553,10 +5361,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 where1: await WhatToQueryGroupAsync(typeof(T1), connection, what1, transaction, cancellationToken),
@@ -5668,10 +5472,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -5783,10 +5583,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -5898,10 +5694,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -6013,10 +5805,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 where1: where1,
@@ -6128,10 +5916,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -6264,11 +6048,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: await WhatToQueryGroupAsync(typeof(T1), connection, what1, transaction, cancellationToken),
@@ -6399,11 +6178,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -6534,11 +6308,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -6669,11 +6438,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -6804,11 +6568,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -6939,11 +6698,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -7096,12 +6850,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: await WhatToQueryGroupAsync(typeof(T1), connection, what1, transaction, cancellationToken),
@@ -7251,12 +6999,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -7406,12 +7148,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -7561,12 +7297,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -7716,12 +7446,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 where1: where1,
@@ -7871,12 +7595,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -8049,13 +7767,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: await WhatToQueryGroupAsync(typeof(T1), connection, what1, transaction, cancellationToken),
@@ -8224,13 +7935,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -8399,13 +8103,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -8574,13 +8271,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: ToQueryGroup(where1),
@@ -8749,13 +8439,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 where1: where1,
@@ -8924,13 +8607,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: ClassMappedNameCache.Get<T1>(),
@@ -9052,8 +8728,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -9129,8 +8803,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -9206,8 +8878,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -9283,8 +8953,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -9360,8 +9028,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -9437,8 +9103,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -9631,9 +9295,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -9731,9 +9392,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -9831,9 +9489,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -9931,9 +9586,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -10031,9 +9683,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -10131,9 +9780,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -10376,10 +10022,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -10500,10 +10142,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -10624,10 +10262,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -10748,10 +10382,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -10872,10 +10502,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -10996,10 +10622,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -11290,11 +10912,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -11437,11 +11054,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -11584,11 +11196,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -11731,11 +11338,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -11878,11 +11480,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -12025,11 +11622,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -12368,12 +11960,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -12538,12 +12124,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -12708,12 +12288,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -12878,12 +12452,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -13048,12 +12616,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -13218,12 +12780,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -13610,13 +13166,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -13803,13 +13352,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -13996,13 +13538,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -14189,13 +13724,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -14382,13 +13910,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -14575,13 +14096,6 @@ namespace RepoDb
             ICache cache = null,
             ITrace trace = null,
             IStatementBuilder statementBuilder = null)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -19730,8 +19244,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -19810,8 +19322,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -19890,8 +19400,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -19970,8 +19478,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -20050,8 +19556,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             return QueryMultipleAsyncInternal<T1, T2>(connection: connection,
                 tableName1: tableName1,
@@ -20130,8 +19634,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -20331,9 +19833,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -20434,9 +19933,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -20537,9 +20033,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -20640,9 +20133,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -20743,9 +20233,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3>(connection: connection,
                 tableName1: tableName1,
@@ -20846,9 +20333,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -21099,10 +20583,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -21226,10 +20706,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -21353,10 +20829,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -21480,10 +20952,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -21607,10 +21075,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4>(connection: connection,
                 tableName1: tableName1,
@@ -21734,10 +21198,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -22038,11 +21498,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -22188,11 +21643,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -22338,11 +21788,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -22488,11 +21933,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -22638,11 +22078,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5>(connection: connection,
                 tableName1: tableName1,
@@ -22788,11 +22223,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -23143,12 +22573,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -23316,12 +22740,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -23489,12 +22907,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -23662,12 +23074,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -23835,12 +23241,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6>(connection: connection,
                 tableName1: tableName1,
@@ -24008,12 +23408,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -24414,13 +23808,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return await QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -24610,13 +23997,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -24806,13 +24186,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -25002,13 +24375,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -25198,13 +24564,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             return QueryMultipleAsyncInternal<T1, T2, T3, T4, T5, T6, T7>(connection: connection,
                 tableName1: tableName1,
@@ -25394,13 +24753,6 @@ namespace RepoDb
             ITrace trace = null,
             IStatementBuilder statementBuilder = null,
             CancellationToken cancellationToken = default)
-            where T1 : class
-            where T2 : class
-            where T3 : class
-            where T4 : class
-            where T5 : class
-            where T6 : class
-            where T7 : class
         {
             // Variables
             var commandType = CommandType.Text;
@@ -30660,7 +30012,6 @@ namespace RepoDb
             ICache cache,
             QueryGroup where,
             List<QueryGroup> queryGroups)
-            where T : class
         {
             IEnumerable<T> item = null;
 
@@ -30763,7 +30114,6 @@ namespace RepoDb
             QueryGroup where,
             List<QueryGroup> queryGroups,
             CancellationToken cancellationToken = default)
-            where T : class
         {
             IEnumerable<T> item = null;
 
